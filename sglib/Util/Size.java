@@ -1,4 +1,4 @@
-package Util;
+package sglib.Util;
 
 public class Size {
 	private float width;

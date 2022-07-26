@@ -1,4 +1,4 @@
-package Util;
+package sglib.Util;
 
 public class Velocity {
 	private float X;

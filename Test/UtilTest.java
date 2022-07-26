@@ -1,5 +1,5 @@
 package Test;
-import Util.*;
+import sglib.Util.*;
 
 public class UtilTest {
     public UtilTest(){
