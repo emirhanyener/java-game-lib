@@ -30,4 +30,8 @@ public class GameObjects {
 	public LinkedList<Object> getObjects(){
 		return objects;
 	}
+
+    public void resetInstance(){
+        instance = new GameObjects();
+    }
 }
