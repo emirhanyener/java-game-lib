@@ -5,12 +5,12 @@ import java.util.LinkedList;
 
 public class GameObjects {
 	private static GameObjects instance;
-	private LinkedList<Object> objects = null;
+	private LinkedList<Object> objects = new LinkedList<Object>();
     
 	public static GameObjects getInstance() {
 		if(instance == null) 
 			instance = new GameObjects();
-            
+
 		return instance;
 	}
 
