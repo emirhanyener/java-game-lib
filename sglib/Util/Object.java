@@ -14,6 +14,11 @@ public class Object{
 		this.size = size;
         this.image = image;
 	}
+	public Object(String name, Position position, Size size) {
+		this.name = name;
+		this.position = position;
+		this.size = size;
+	}
 	public Object(String name) {
 		this.name = name;
 		this.position = new Position(0, 0);
