@@ -1,25 +1,25 @@
 package sglib.Util;
 
 public class Size {
-	private float width;
-	private float height;
+	private int width;
+	private int height;
 	
-	public Size(float width, float height) {
+	public Size(int width, int height) {
 		this.width = width;
 		this.height = height;
 	}
 	
-	public float getHeight() {
+	public int getHeight() {
 		return height;
 	}
-	public float getWidth() {
+	public int getWidth() {
 		return width;
 	}
 	
-	public void setHeight(float height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
-	public void setWidth(float width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 }
