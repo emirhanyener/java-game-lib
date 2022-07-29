@@ -13,12 +13,7 @@ public class Camera {
 	}
 	
 	public Position getPosition() {
-		position = new Position(position.getX(), position.getY());
-
-		position.addX(-Setting.WINDOW_WIDTH / 2);
-		position.addY(-Setting.WINDOW_HEIGHT / 2);
-		
-		return this.position;
+		return new Position(position.getX() - Setting.WINDOW_WIDTH / 2, position.getY() - Setting.WINDOW_HEIGHT / 2);
 	}
 	
 	public void setPosition(Position position) {
