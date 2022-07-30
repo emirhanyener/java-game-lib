@@ -1,6 +1,7 @@
 package sglib;
 
 import sglib.Util.Object;
+import sglib.Camera.StaticCamera;
 import sglib.Util.Camera;
 import java.util.LinkedList;
 
@@ -35,7 +36,7 @@ public class GameObjects {
 
 	public Camera getMainCamera() {
 		if(this.mainCamera == null)
-			this.mainCamera = new Camera();
+			this.mainCamera = new StaticCamera();
 		return mainCamera;
 	}
 	public void setMainCamera(Camera mainCamera) {
