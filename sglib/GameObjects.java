@@ -3,12 +3,15 @@ package sglib;
 import sglib.Util.Object;
 import sglib.Camera.StaticCamera;
 import sglib.Util.Camera;
+import sglib.Util.EventFunction;
+
 import java.util.LinkedList;
 
 public class GameObjects {
 	private static GameObjects instance;
 	private Camera mainCamera = null;
 	private LinkedList<Object> objects = new LinkedList<Object>();
+	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
     
 	public static GameObjects getInstance() {
 		if(instance == null) 
@@ -32,6 +35,13 @@ public class GameObjects {
 	}
 	public LinkedList<Object> getObjects(){
 		return objects;
+	}
+
+	public void addEvent(EventFunction item) {
+		events.add(item);
+	}
+	public LinkedList<EventFunction> getEvents(){
+		return events;
 	}
 
 	public Camera getMainCamera() {

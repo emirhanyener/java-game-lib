@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JFrame;
 
+import sglib.Util.EventFunction;
+
 public class GameFrame{
     GameCanvas canvas;
     public GameFrame(){
@@ -17,14 +19,17 @@ public class GameFrame{
     }
 
     public void update() {
-		while(true) {
-			try {
-				TimeUnit.MILLISECONDS.sleep(Setting.REFRESH_RATE);
-			} 
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			canvas.repaint();
-		}
+      while(true) {
+        try {
+          TimeUnit.MILLISECONDS.sleep(Setting.REFRESH_RATE);
+        } 
+        catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        canvas.repaint();
+        for (EventFunction item : GameObjects.getInstance().getEvents()) {
+          item.execute();
+        }
+      }
     }
 }
