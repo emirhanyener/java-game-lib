@@ -7,6 +7,10 @@ public class SGLib {
         
     }
 
+	public void start(){
+		GameFrame gframe = new GameFrame();
+	}
+
 	public void setMainCamera(Camera mainCamera) {
 		GameObjects.getInstance().setMainCamera(mainCamera);
 	}
