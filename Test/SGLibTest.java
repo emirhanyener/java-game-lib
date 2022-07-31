@@ -1,6 +1,6 @@
 package Test;
 import sglib.*;
-import sglib.Util.Object;
+import sglib.Util.GameObject;
 
 public class SGLibTest {
     public SGLibTest(){
@@ -32,7 +32,7 @@ public class SGLibTest {
     public boolean gameObjectsAddTest(){
         GameObjects g = GameObjects.getInstance();
         g.resetInstance();
-        Object o = new Object("test");
+        GameObject o = new GameObject("test");
         g.addObject(o);
         if(g.findObject("test") != null){
             return true;
@@ -44,7 +44,7 @@ public class SGLibTest {
     public boolean gameObjectsRemoveTest(){
         GameObjects g = GameObjects.getInstance();
         g.resetInstance();
-        Object o = new Object("test");
+        GameObject o = new GameObject("test");
         g.addObject(o);
         g.removeObject(o);
         if(g.findObject("test") == null){
@@ -57,9 +57,9 @@ public class SGLibTest {
     public boolean gameObjectsFindTest(){
         GameObjects g = GameObjects.getInstance();
         g.resetInstance();
-        g.addObject(new Object("test1"));
-        g.addObject(new Object("test2"));
-        g.addObject(new Object("test3"));
+        g.addObject(new GameObject("test1"));
+        g.addObject(new GameObject("test2"));
+        g.addObject(new GameObject("test3"));
         if(g.findObject("test2") != null){
             return true;
         }

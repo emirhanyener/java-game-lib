@@ -2,18 +2,18 @@ package sglib.Camera;
 
 import sglib.Setting;
 import sglib.Util.Camera;
-import sglib.Util.Object;
+import sglib.Util.GameObject;
 import sglib.Util.Position;
 
 public class DynamicCamera implements Camera{
-    private Object target;
+    private GameObject target;
     private Position offset;
 
-    public DynamicCamera(Object object, Position offset){
+    public DynamicCamera(GameObject object, Position offset){
         this.target = object;
         this.offset = offset;
     }
-    public DynamicCamera(Object object){
+    public DynamicCamera(GameObject object){
         this.target = object;
         this.offset = new Position();
     }

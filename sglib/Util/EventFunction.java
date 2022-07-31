@@ -3,16 +3,16 @@ package sglib.Util;
 import sglib.GameObjects;
 
 public abstract class EventFunction {
-    private Object object;
+    private GameObject object;
 
     public EventFunction(){
         GameObjects.getInstance().addEvent(this);
     }
 
-    public void setObject(Object object) {
+    public void setObject(GameObject object) {
         this.object = object;
     }
-    public Object getObject() {
+    public GameObject getObject() {
         return this.object;
     }
 
