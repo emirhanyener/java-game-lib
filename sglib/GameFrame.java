@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JFrame;
 
-import sglib.Util.EventFunction;
+import sglib.Util.*;
 
 public class GameFrame{
     GameCanvas canvas;
@@ -27,6 +27,9 @@ public class GameFrame{
           e.printStackTrace();
         }
         canvas.repaint();
+        for (GameObject item : GameObjects.getInstance().getObjects()) {
+          item.calculate();
+        }
         for (EventFunction item : GameObjects.getInstance().getEvents()) {
           item.execute();
         }
