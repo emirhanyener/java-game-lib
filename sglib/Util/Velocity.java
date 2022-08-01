@@ -24,7 +24,14 @@ public class Velocity {
 	public void setX(float X) {
 		this.X = X;
 	}
+	public void addX(float X){
+		this.X += X;
+	}
 	public void setY(float Y) {
 		this.Y = Y;
 	}
+	public void addY(float Y){
+		this.Y += Y;
+	}
+
 }
