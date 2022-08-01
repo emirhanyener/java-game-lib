@@ -5,15 +5,18 @@ import sglib.Util.Camera;
 import sglib.Util.GameObject;
 import sglib.Util.Position;
 
-public class DynamicCamera implements Camera{
+//follower camera follows a target object automaticly
+public class FollowerCamera implements Camera{
     private GameObject target;
     private Position offset;
 
-    public DynamicCamera(GameObject object, Position offset){
+    //constuctors
+    public FollowerCamera(GameObject object, Position offset){
         this.target = object;
         this.offset = offset;
     }
-    public DynamicCamera(GameObject object){
+    //set offset position 0, 0 if offset not sended
+    public FollowerCamera(GameObject object){
         this.target = object;
         this.offset = new Position();
     }

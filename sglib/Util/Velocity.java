@@ -14,6 +14,7 @@ public class Velocity {
 		this.Y = Y;
 	}
 	
+	//getters
 	public float getX() {
 		return this.X;
 	}
@@ -21,6 +22,7 @@ public class Velocity {
 		return this.Y;
 	}
 	
+	//setters
 	public void setX(float X) {
 		this.X = X;
 	}

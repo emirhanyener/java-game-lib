@@ -3,9 +3,11 @@ package sglib;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
+//create game window
 public class GameFrame{
     public GameCanvas canvas;
     public JFrame frame;
+
     public GameFrame(){
         frame = new JFrame();
         frame.setBounds(Setting.WINDOW_POSITION_X, Setting.WINDOW_POSITION_Y, Setting.WINDOW_WIDTH, Setting.WINDOW_HEIGHT);
@@ -14,5 +16,4 @@ public class GameFrame{
         frame.add(canvas, BorderLayout.CENTER);
         frame.setVisible(true);
     }
-
 }

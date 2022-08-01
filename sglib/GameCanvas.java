@@ -8,6 +8,8 @@ import java.awt.image.ImageObserver;
 
 import javax.swing.JPanel;
 
+//game canvas
+//for repaint panel
 public class GameCanvas extends JPanel{
 	public GameCanvas() {
         
@@ -19,6 +21,7 @@ public class GameCanvas extends JPanel{
 		g.fillRect(0, 0, Setting.WINDOW_WIDTH, Setting.WINDOW_HEIGHT);
 		g.setColor(Setting.DEFAULT_COLOR);
 		
+		//draw all gameobjects
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
 			if(item.getImage() == null)			
 				g.fillRect((int)item.position.getX() - (int)GameObjects.getInstance().getMainCamera().getPosition().getX(), (int)item.position.getY() - (int)GameObjects.getInstance().getMainCamera().getPosition().getY(), item.size.getWidth(), item.size.getHeight());

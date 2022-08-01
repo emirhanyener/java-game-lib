@@ -12,6 +12,7 @@ public class GameObject{
 	public boolean isAbstract = false;
 	private Image image;
 
+	//constructors
 	public GameObject(String name, Position position, Size size, Image image) {
 		this.name = name;
 		this.position = position;
@@ -30,6 +31,7 @@ public class GameObject{
         this.image = null;
 	}
 	
+	//getters
 	public boolean isAbstract() {
 		return isAbstract;
 	}
@@ -40,10 +42,13 @@ public class GameObject{
 		return image;
 	}
 
+	//set object image
 	public void setImage(Image image) {
 		this.image = image;
 	}
 
+	//static methods
+	//(short usage)
 	public static GameObject create(String name, Position position, Size size){
 		GameObject object = new GameObject(name, position, size);
 		GameObject.add(object);
@@ -61,6 +66,7 @@ public class GameObject{
 		GameObjects.getInstance().addObject(object);
 	}
 
+	//setters
 	public GameObject setFunction(EventFunction function){
 		function.setObject(this);
 		GameObjects.getInstance().addEvent(function);
@@ -71,10 +77,12 @@ public class GameObject{
 		GameObjects.getInstance().addPhysics(p);
 	}
 
+	//add to position from velocity
 	public void calculate(){
 		this.position.addX(this.velocity.getX());
 		this.position.addY(this.velocity.getY());
 	}
 
+	//execute triggered function if any object in object
 	public void OnTriggered(GameObject object) { };
 }

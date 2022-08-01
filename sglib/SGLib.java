@@ -6,24 +6,25 @@ import java.util.concurrent.TimeUnit;
 
 public class SGLib {
 	GameFrame gframe;
+
     public SGLib(){
 		gframe = new GameFrame();
-        
     }
 
+	//this method starts sglib
 	public void start(){
 		update();
 	}
 
+	//setters
 	public void setMainCamera(Camera mainCamera) {
 		GameObjects.getInstance().setMainCamera(mainCamera);
 	}
-
 	public void setKeyListener(KeyListener kl){
 		gframe.frame.addKeyListener(kl);
 	}
 
-	
+	//this method executes per refresh in game
     public void update() {
 		while(true) {
 		  try {

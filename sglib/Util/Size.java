@@ -9,6 +9,7 @@ public class Size {
 		this.height = height;
 	}
 	
+	//getters
 	public int getHeight() {
 		return height;
 	}
@@ -16,6 +17,7 @@ public class Size {
 		return width;
 	}
 	
+	//setters
 	public void setHeight(int height) {
 		this.height = height;
 	}

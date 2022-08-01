@@ -10,6 +10,7 @@ public class Speed {
 		this.speed = speed;
 	}
 	
+	//get/set
 	public float getSpeed() {
 		return speed;
 	}
