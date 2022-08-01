@@ -1,4 +1,4 @@
-package Test.DynamicCameraTest;
+package Test.FollowerCameraTest;
 
 import sglib.Util.*;
 
