@@ -1,6 +1,7 @@
 package sglib;
 
 import sglib.Util.GameObject;
+import sglib.Util.Physics;
 import sglib.Camera.StaticCamera;
 import sglib.Util.Camera;
 import sglib.Util.EventFunction;
@@ -11,6 +12,7 @@ public class GameObjects {
 	private static GameObjects instance;
 	private Camera mainCamera = null;
 	private LinkedList<GameObject> objects = new LinkedList<GameObject>();
+	private LinkedList<Physics> physics = new LinkedList<Physics>();
 	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
     
 	public static GameObjects getInstance() {
@@ -40,8 +42,14 @@ public class GameObjects {
 	public void addEvent(EventFunction item) {
 		events.add(item);
 	}
+	public void addPhysics(Physics item) {
+		physics.add(item);
+	}
 	public LinkedList<EventFunction> getEvents(){
 		return events;
+	}
+	public LinkedList<Physics> getPhysics() {
+		return physics;
 	}
 
 	public Camera getMainCamera() {

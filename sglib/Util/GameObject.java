@@ -9,6 +9,7 @@ public class GameObject{
 	public Position position;
 	public Velocity velocity = new Velocity();
 	public Size size;
+	public boolean isAbstract = false;
 	private Image image;
 
 	public GameObject(String name, Position position, Size size, Image image) {
@@ -29,6 +30,9 @@ public class GameObject{
         this.image = null;
 	}
 	
+	public boolean isAbstract() {
+		return isAbstract;
+	}
 	public String getName() {
 		return name;
 	}
@@ -61,6 +65,10 @@ public class GameObject{
 		function.setObject(this);
 		GameObjects.getInstance().addEvent(function);
 		return this;
+	}
+	public void addPhysics(){
+		Physics p = new Physics(this);
+		GameObjects.getInstance().addPhysics(p);
 	}
 
 	public void calculate(){
