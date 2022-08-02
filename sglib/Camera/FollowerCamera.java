@@ -1,12 +1,11 @@
 package sglib.Camera;
 
 import sglib.Setting;
-import sglib.Util.Camera;
 import sglib.Util.GameObject;
 import sglib.Util.Position;
 
 //follower camera follows a target object automaticly
-public class FollowerCamera implements Camera{
+public class FollowerCamera extends Camera{
     private GameObject target;
     private Position offset;
 

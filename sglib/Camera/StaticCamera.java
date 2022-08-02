@@ -1,11 +1,10 @@
 package sglib.Camera;
 
 import sglib.Setting;
-import sglib.Util.Camera;
 import sglib.Util.Position;
 
 //static camera, used for set position manually 
-public class StaticCamera implements Camera{
+public class StaticCamera extends Camera{
     private Position position;
 
     //set position 0, 0 if constructor has no parameter
