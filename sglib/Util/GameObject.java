@@ -59,6 +59,9 @@ public class GameObject{
 		GameObject.add(object);
 		return object;
 	}
+	public static void remove(String name){
+		GameObjects.getInstance().removeObject(GameObject.find(name));
+	}
 	public static GameObject find(String name){
 		return GameObjects.getInstance().findObject(name);
 	}
