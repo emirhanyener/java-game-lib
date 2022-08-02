@@ -1,5 +1,6 @@
 package sglib;
 
+import sglib.Camera.Camera;
 import sglib.Util.*;
 import java.awt.event.KeyListener;
 import java.util.concurrent.TimeUnit;

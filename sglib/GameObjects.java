@@ -2,8 +2,8 @@ package sglib;
 
 import sglib.Util.GameObject;
 import sglib.Util.Physics;
+import sglib.Camera.Camera;
 import sglib.Camera.StaticCamera;
-import sglib.Util.Camera;
 import sglib.Util.EventFunction;
 
 import java.util.LinkedList;
