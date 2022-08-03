@@ -15,6 +15,9 @@ public abstract class Camera {
 	public void setZoomValue(float zoomValue){
 		this.zoomValue = zoomValue;
 	}
+	public void addZoomValue(float zoomValue){
+		this.zoomValue += zoomValue;
+	}
 
 	public abstract Position getPosition();
 }
