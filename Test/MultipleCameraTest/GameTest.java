@@ -1,8 +1,6 @@
 package Test.MultipleCameraTest;
 
 import sglib.*;
-import sglib.Camera.StaticCamera;
-import sglib.Camera.FollowerCamera;
 import sglib.Camera.MultipleCamera;
 import sglib.Util.GameObject;
 import sglib.Util.Position;

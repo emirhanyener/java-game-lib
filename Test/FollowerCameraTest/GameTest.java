@@ -1,7 +1,6 @@
 package Test.FollowerCameraTest;
 
 import sglib.*;
-import sglib.Camera.StaticCamera;
 import sglib.Camera.FollowerCamera;
 import sglib.Util.GameObject;
 import sglib.Util.Position;

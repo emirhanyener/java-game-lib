@@ -11,7 +11,7 @@ public abstract class EventFunction {
         GameObjects.getInstance().addEvent(this);
     }
 
-    //set/get object
+    //set / get object
     public void setObject(GameObject object) {
         this.object = object;
     }

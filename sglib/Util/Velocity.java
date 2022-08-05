@@ -8,7 +8,6 @@ public class Velocity {
 		this.X = 0;
 		this.Y = 0;
 	}
-	
 	public Velocity(float X, float Y) {
 		this.X = X;
 		this.Y = Y;

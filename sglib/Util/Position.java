@@ -7,7 +7,6 @@ public class Position {
 	public Position() {
 		resetPosition();
 	}
-	
 	public Position(float X, float Y) {
 		this.X = X;
 		this.Y = Y;
