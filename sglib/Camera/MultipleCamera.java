@@ -13,11 +13,13 @@ public class MultipleCamera extends Camera{
     public MultipleCamera(GameObject[] objects, Position offset){
         this.targets = objects;
         this.offset = offset;
+        this.position = new Position();
     }
     //set offset position 0, 0 if offset not sended
     public MultipleCamera(GameObject[] objects){
         this.targets = objects;
         this.offset = new Position();
+        this.position = new Position();
     }
 
     @Override
@@ -28,8 +30,8 @@ public class MultipleCamera extends Camera{
             sumX += gameObject.position.getX();
             sumY += gameObject.position.getY();
         }
-        this.position.setX(sumX / targets.length);
-        this.position.setY(sumY / targets.length);
+        this.position.setX(sumX / targets.length + offset.getX());
+        this.position.setY(sumY / targets.length + offset.getY());
         return this.position;
     }
 
