@@ -8,7 +8,7 @@ import sglib.Util.Size;
 
 public class CameraTest {
     public CameraTest(){
-        int all = 4;
+        int all = 5;
         int success = 0;
 
         System.out.println("Camera tests start");
@@ -16,6 +16,7 @@ public class CameraTest {
         if(staticCameraParameterConstructorTest()) success++;
         if(followerCameraPositionTest()) success++;
         if(followerCameraVariableObjectPositionTest()) success++;
+        if(MultipleCameraPositionTest()) success++;
         System.out.println("Camera tests end");
 
         System.out.println("Camera tests " + success + " / " + all);
@@ -59,6 +60,18 @@ public class CameraTest {
             return true;
         }
         System.out.println("followerCameraVariableObjectPositionTest failed");
+        return false;
+    }
+    public boolean MultipleCameraPositionTest(){
+        GameObjects.getInstance().resetInstance();
+        GameObject.create("o1", new Position(150, 300), new Size(50, 50));
+        GameObject.create("o2", new Position(300, 600), new Size(50, 50));
+        GameObject.create("o3", new Position(600, 1200), new Size(50, 50));
+        MultipleCamera c = new MultipleCamera(new GameObject[]{GameObject.find("o2"), GameObject.find("o3")});
+        if(c.getCameraPosition().getX() == 450 && c.getCameraPosition().getY() == 900){
+            return true;
+        }
+        System.out.println("MultipleCameraPositionTest failed");
         return false;
     }
 }
