@@ -7,6 +7,10 @@ public class AlertInfo {
     private AlertLevel alertLevel;
 
     //constructors
+    public AlertInfo(){
+        this.message = "";
+        this.alertLevel = AlertLevel.info;
+    }
     public AlertInfo(String message){
         this.message = message;
         this.alertLevel = AlertLevel.info;

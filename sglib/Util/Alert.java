@@ -1,16 +1,17 @@
 package sglib.Util;
 
 import sglib.Setting;
+import sglib.Util.StaticValues.AlertLevel;
 
 public class Alert {
 	private static Alert alert = null;
-	private String[] list;
+	private AlertInfo[] list;
 	private int index;
 	
 	private Alert() {
-		this.list = new String[Setting.MAX_ALERT_NUMBER + 1];
-		for(int i = 0; i < Setting.MAX_ALERT_NUMBER + 1; i++) {
-			list[i] = "";
+		this.list = new AlertInfo[Setting.MAX_ALERT_NUMBER];
+		for(int i = 0; i < Setting.MAX_ALERT_NUMBER; i++) {
+			this.list[i] = new AlertInfo();
 		}
 		
 		this.index = 0;
@@ -22,19 +23,23 @@ public class Alert {
 		return alert;
 	}
 	
-	public void addAlert(String value) {
-		if(this.index == Setting.MAX_ALERT_NUMBER)
+	public void addAlert(String value, AlertLevel level) {
+		if(this.index == Setting.MAX_ALERT_NUMBER){
 			this.index = 0;
-		list[index] = value;
+		}
+		list[index].setMessage(value);
+		list[index].setAlertLevel(level);;
 		this.index++;
 	}
 	
-	public void setAlertRow(int row, String newValue) {
-		if(row < Setting.MAX_ALERT_NUMBER)
-			list[row] = newValue;
+	public void setAlertRow(int row, String value, AlertLevel level) {
+		if(row < Setting.MAX_ALERT_NUMBER){
+			list[row].setMessage(value);
+			list[row].setAlertLevel(level);
+		}
 	}
 	
-	public String[] getAlerts() {
+	public AlertInfo[] getAlerts() {
 		return this.list;
 	}
 	
