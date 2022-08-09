@@ -1,7 +1,10 @@
 package sglib;
 
+import sglib.Util.Alert;
+import sglib.Util.AlertInfo;
 import sglib.Util.GameObject;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.ImageObserver;
@@ -23,15 +26,38 @@ public class GameCanvas extends JPanel{
 		
 		//draw all gameobjects
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
-			if(item.getImage() == null)			
-				g.fillRect((int)item.position.getX() - (int)GameObjects.getInstance().getMainCamera().getPosition().getX(), (int)item.position.getY() - (int)GameObjects.getInstance().getMainCamera().getPosition().getY(), item.size.getWidth(), item.size.getHeight());
-			else
+			if(item.getImage() == null)	{
+				g.fillRect((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY()), (int)(item.size.getWidth()), (int)(item.size.getHeight()));
+			}
+			else{
 				g.drawImage(item.getImage(), (int)item.position.getX() - (int)GameObjects.getInstance().getMainCamera().getPosition().getX(), (int)item.position.getY() - (int)GameObjects.getInstance().getMainCamera().getPosition().getY(), item.size.getWidth(), item.size.getHeight(), Setting.DEFAULT_COLOR, new ImageObserver() {
 					@Override
 					public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
 						return false;
 					}
 				});
+			}
+		}
+		if(Setting.IS_ALERT_ACTIVE) {
+			int i = 0;
+			for(AlertInfo alert : Alert.getInstance().getAlerts()) {
+				i++;
+				switch (alert.getAlertLevel()) {
+					case info:
+						g.setColor(Color.BLUE);
+						break;
+					case warning:
+						g.setColor(Color.YELLOW);
+						break;
+					case error:
+						g.setColor(Color.RED);
+						break;
+					default:
+						g.setColor(Color.BLACK);
+						break;
+				}
+				g.drawString(alert.getMessage(), 10, i * 15);
+			}
 		}
 	}
 }
