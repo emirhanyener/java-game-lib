@@ -2,14 +2,18 @@ package sglib.GUI;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.ImageObserver;
 
+import sglib.Setting;
 import sglib.Util.Position;
 
-public class GUI {
+public abstract class GUI {
     private Color color;
     private Position position;
+
+    public GUI(){
+        this.color = Setting.DEFAULT_COLOR;
+        this.position = new Position();
+    }
 
     public Position getPosition() {
         return position;
@@ -23,4 +27,6 @@ public class GUI {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    public abstract void draw(Graphics g);
 }
