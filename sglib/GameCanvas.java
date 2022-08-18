@@ -3,6 +3,7 @@ package sglib;
 import sglib.Util.Alert;
 import sglib.Util.AlertInfo;
 import sglib.Util.GameObject;
+import sglib.GUI.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -27,6 +28,7 @@ public class GameCanvas extends JPanel{
 		//draw all gameobjects
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
 			if(item.getImage() == null)	{
+				g.setColor(Setting.DEFAULT_COLOR);
 				g.fillRect((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY()), (int)(item.size.getWidth()), (int)(item.size.getHeight()));
 			}
 			else{
@@ -57,6 +59,12 @@ public class GameCanvas extends JPanel{
 						break;
 				}
 				g.drawString(alert.getMessage(), 10, i * 15);
+			}
+		}
+		
+		if(Setting.IS_GUI_ACTIVE){
+			for(GUI gui : GameObjects.getInstance().getGUIObjects()){
+				gui.draw(g);
 			}
 		}
 	}
