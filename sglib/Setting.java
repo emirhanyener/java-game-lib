@@ -15,4 +15,6 @@ public class Setting {
 	public static final Color DEFAULT_COLOR = new Color(255, 0, 255);
 	public static final boolean IS_ALERT_ACTIVE = true;
 	public static final int MAX_ALERT_NUMBER = 3;
+	public static final boolean IS_GUI_ACTIVE = true;
+	public static final int STOKE_WIDTH = 2;
 }
