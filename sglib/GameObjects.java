@@ -5,6 +5,7 @@ import sglib.Util.Physics;
 import sglib.Camera.Camera;
 import sglib.Camera.StaticCamera;
 import sglib.Util.EventFunction;
+import sglib.GUI.*;
 
 import java.util.LinkedList;
 
@@ -14,6 +15,7 @@ public class GameObjects {
 	private LinkedList<GameObject> objects = new LinkedList<GameObject>();
 	private LinkedList<Physics> physics = new LinkedList<Physics>();
 	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
+	private LinkedList<GUI> gui = new LinkedList<GUI>();
     
 	//for return single instance
 	public static GameObjects getInstance() {
@@ -23,6 +25,7 @@ public class GameObjects {
 		return instance;
 	}
 
+	//++++++++++ Object ++++++++++\\
 	//add gameobject to list
 	public void addObject(GameObject item) {
 		objects.add(item);
@@ -44,6 +47,7 @@ public class GameObjects {
 		return objects;
 	}
 
+	//++++++++++ Event ++++++++++\\
 	//add event for execute
 	public void addEvent(EventFunction item) {
 		events.add(item);
@@ -61,6 +65,7 @@ public class GameObjects {
 		return physics;
 	}
 
+	//++++++++++ Camera ++++++++++\\
 	//get/set main camera
 	public Camera getMainCamera() {
 		if(this.mainCamera == null)
@@ -69,6 +74,28 @@ public class GameObjects {
 	}
 	public void setMainCamera(Camera mainCamera) {
 		this.mainCamera = mainCamera;
+	}
+
+	//++++++++++ GUI ++++++++++\\
+	//add gui object to list
+	public void addGUIObject(GUI item) {
+		gui.add(item);
+	}
+	//remove gui object from list
+	public void removeGUIObject(GUI item) {
+		gui.remove(item);
+	}
+	//search 'name' named gui object
+	public GUI findGUIObject(String name) {
+		for(int i = 0; i < gui.size(); i++) 
+			if(gui.get(i).getName() == name)
+				return gui.get(i);
+
+		return null;
+	}
+	//get all gui objects
+	public LinkedList<GUI> getGUIObjects(){
+		return gui;
 	}
 
 	//create new object
