@@ -12,8 +12,8 @@ public class Polygon {
 		int[] yPositions = new int[shape];
 
 		for(int i = 0; i < shape; i++){
-			xPositions[i] = (int)(position.getX() + size.getWidth() * Math.cos(Math.toRadians(((((shape - 2) * 180) / shape) * i ) + rotation)));
-			yPositions[i] = (int)(position.getY() + size.getHeight() * Math.sin(Math.toRadians(((((shape - 2) * 180) / shape) * i ) + rotation)));
+			xPositions[i] = (int)(position.getX() + size.getWidth() * Math.cos(Math.toRadians(((180 - ((shape - 2) * 180) / shape) * i ) + rotation)));
+			yPositions[i] = (int)(position.getY() + size.getHeight() * Math.sin(Math.toRadians(((180 - ((shape - 2) * 180) / shape) * i ) + rotation)));
 		}
 		g.fillPolygon(xPositions, yPositions, shape);
     }
