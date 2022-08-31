@@ -95,10 +95,10 @@ public class GameObject{
 			if(GameObjects.getInstance().findGUIObject(guiName) == null){
 				GameObjects.getInstance().addGUIObject(new GUILine(new Position(this.position.getX() + offsetX, this.position.getY() + offsetY), new Position(this.position.getX() + offsetX + x, this.position.getY() + offsetY + y)).setName(guiName).setColor(Color.GREEN));
 			}
-			GameObjects.getInstance().findGUIObject(guiName).getPosition().setX(this.position.getX() + offsetX + this.size.getWidth() / 2);
-			GameObjects.getInstance().findGUIObject(guiName).getPosition().setY(this.position.getY() + offsetY + this.size.getHeight() / 2);
-			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setX(this.position.getX() + offsetX + x + this.size.getWidth() / 2);
-			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setY(this.position.getY() + offsetY + y + this.size.getHeight() / 2);
+			GameObjects.getInstance().findGUIObject(guiName).getPosition().setX(this.position.getX() + offsetX);
+			GameObjects.getInstance().findGUIObject(guiName).getPosition().setY(this.position.getY() + offsetY);
+			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setX(this.position.getX() + offsetX + x);
+			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setY(this.position.getY() + offsetY + y);
 		}
 
 		LinkedList<GameObject> detectedObjects = new LinkedList<GameObject>();
@@ -108,10 +108,10 @@ public class GameObject{
 				if(item == this){
 					continue;
 				}
-				if(this.position.getX() + (this.size.getWidth() / 2) + offsetX + (x / step) * i > item.position.getX()){
-					if(this.position.getX() + (this.size.getWidth() / 2) + offsetX + (x / step) * i < item.position.getX() + item.size.getWidth()){
-						if(this.position.getY() + (this.size.getHeight() / 2) + offsetY + (y / step) * i > item.position.getY()){
-							if(this.position.getY() + (this.size.getHeight() / 2) + offsetY + (y / step) * i < item.position.getY() + item.size.getHeight()){
+				if(this.position.getX() + offsetX + (x / step) * i > item.position.getX() - item.size.getWidth()){
+					if(this.position.getX() + offsetX + (x / step) * i < item.position.getX() + item.size.getWidth()){
+						if(this.position.getY() + offsetY + (y / step) * i > item.position.getY() - item.size.getHeight()){
+							if(this.position.getY() + offsetY + (y / step) * i < item.position.getY() + item.size.getHeight()){
 								detectedObjects.add(item);
 							}
 						}
