@@ -3,6 +3,9 @@ package sglib;
 import sglib.Util.Alert;
 import sglib.Util.AlertInfo;
 import sglib.Util.GameObject;
+import sglib.Util.Polygon;
+import sglib.Util.Position;
+import sglib.Util.Size;
 import sglib.GUI.*;
 
 import java.awt.Color;
@@ -24,12 +27,12 @@ public class GameCanvas extends JPanel{
 		g.setColor(Setting.BACKGROUND_COLOR);
 		g.fillRect(0, 0, Setting.WINDOW_WIDTH, Setting.WINDOW_HEIGHT);
 		g.setColor(Setting.DEFAULT_COLOR);
-		
+
 		//draw all gameobjects
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
 			if(item.getImage() == null)	{
 				g.setColor(Setting.DEFAULT_COLOR);
-				g.fillRect((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY()), (int)(item.size.getWidth()), (int)(item.size.getHeight()));
+				Polygon.draw(g, new Position((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY())), new Size((int)(item.size.getWidth()), (int)(item.size.getHeight())), new Position(item.position.getX(), item.position.getY()), 4, 45);
 			}
 			else{
 				g.drawImage(item.getImage(), (int)item.position.getX() - (int)GameObjects.getInstance().getMainCamera().getPosition().getX(), (int)item.position.getY() - (int)GameObjects.getInstance().getMainCamera().getPosition().getY(), item.size.getWidth(), item.size.getHeight(), Setting.DEFAULT_COLOR, new ImageObserver() {
