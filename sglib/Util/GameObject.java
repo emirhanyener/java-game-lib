@@ -93,7 +93,7 @@ public class GameObject{
 	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, int step, boolean isVisible, String guiName){
 		if(isVisible){
 			if(GameObjects.getInstance().findGUIObject(guiName) == null){
-				GameObjects.getInstance().addGUIObject(new GUILine(new Position(this.position.getX() + offsetX, this.position.getY() + offsetY), new Position(this.position.getX() + offsetX + x, this.position.getY() + offsetY + y)).setName(guiName).setColor(Color.GREEN));
+				GameObjects.getInstance().addGUIObject(new GUILine(new Position(), new Position()).setName(guiName).setColor(Color.GREEN));
 			}
 			GameObjects.getInstance().findGUIObject(guiName).getPosition().setX(this.position.getX() + offsetX);
 			GameObjects.getInstance().findGUIObject(guiName).getPosition().setY(this.position.getY() + offsetY);
@@ -108,10 +108,10 @@ public class GameObject{
 				if(item == this){
 					continue;
 				}
-				if(this.position.getX() + offsetX + (x / step) * i > item.position.getX() - item.size.getWidth()){
-					if(this.position.getX() + offsetX + (x / step) * i < item.position.getX() + item.size.getWidth()){
-						if(this.position.getY() + offsetY + (y / step) * i > item.position.getY() - item.size.getHeight()){
-							if(this.position.getY() + offsetY + (y / step) * i < item.position.getY() + item.size.getHeight()){
+				if(this.position.getX() + offsetX + (x / step) * i > item.position.getX() - item.size.getWidth() / 2){
+					if(this.position.getX() + offsetX + (x / step) * i < item.position.getX() + item.size.getWidth() / 2){
+						if(this.position.getY() + offsetY + (y / step) * i > item.position.getY() - item.size.getHeight() / 2){
+							if(this.position.getY() + offsetY + (y / step) * i < item.position.getY() + item.size.getHeight() / 2){
 								detectedObjects.add(item);
 							}
 						}
