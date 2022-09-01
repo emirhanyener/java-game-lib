@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.MouseInfo;
 
+import sglib.GameObjects;
 import sglib.Util.Position;
 
 public class Cursor implements MouseListener{
@@ -26,7 +27,7 @@ public class Cursor implements MouseListener{
     }
 
     public Position getGamePosition(){
-        return new Position((float)MouseInfo.getPointerInfo().getLocation().getX(), (float)MouseInfo.getPointerInfo().getLocation().getY());
+        return new Position((float)MouseInfo.getPointerInfo().getLocation().getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(), (float)MouseInfo.getPointerInfo().getLocation().getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
     }
 
     public Position getPosition() {
