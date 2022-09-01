@@ -32,7 +32,8 @@ public class GameCanvas extends JPanel{
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
 			if(item.getImage() == null)	{
 				g.setColor(Setting.DEFAULT_COLOR);
-				Polygon.draw(g, new Position((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY())), new Size((int)(item.size.getWidth()), (int)(item.size.getHeight())), new Position(item.position.getX(), item.position.getY()), 4, 45);
+				Polygon.draw(g, item);
+				//Polygon.draw(g, new Position((int)(item.position.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()), (int)(item.position.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY())), new Size((int)(item.size.getWidth()), (int)(item.size.getHeight())));
 			}
 			else{
 				g.drawImage(item.getImage(), (int)item.position.getX() - (int)GameObjects.getInstance().getMainCamera().getPosition().getX(), (int)item.position.getY() - (int)GameObjects.getInstance().getMainCamera().getPosition().getY(), item.size.getWidth(), item.size.getHeight(), Setting.DEFAULT_COLOR, new ImageObserver() {
