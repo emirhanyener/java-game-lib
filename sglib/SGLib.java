@@ -40,16 +40,19 @@ public class SGLib {
 			catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			gframe.canvas.repaint();
+			//Function execute
 			for (EventFunction item : GameObjects.getInstance().getEvents()) {
 				item.execute();
 			}
-			for (Physics item : GameObjects.getInstance().getPhysics()) {
-				item.calculate();
-			}
+			//GameObject update
 			for (GameObject item : GameObjects.getInstance().getObjects()) {
 				item.calculate();
 			}
+			//Physics update
+			for (Physics item : GameObjects.getInstance().getPhysics()) {
+				item.calculate();
+			}
+			gframe.canvas.repaint();
 		}
 	}
 }
