@@ -12,7 +12,7 @@ public class GameTest {
     }
 
     public static void main(String[] args) {
-        GameObject.create("o1", new Position(-500,200), new Size(1000, 30));
+        GameObject.create("o1", new Position(0,200), new Size(1000, 30));
         GameObject.create("o2", new Position(0,0), new Size(30, 30));
         GameObjects.getInstance().setMainCamera(new FollowerCamera(GameObjects.getInstance().findObject("o2"), new Position(0, 0)));
         
