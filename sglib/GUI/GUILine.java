@@ -1,6 +1,5 @@
 package sglib.GUI;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.BasicStroke;
