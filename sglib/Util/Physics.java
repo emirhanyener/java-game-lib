@@ -15,21 +15,42 @@ public class Physics {
     //calculate selected object
 	public void calculate() {
         //loop all object
-        LinkedList<GameObject> detectedObjectsRight = object.checkTrigger(0, 0, (object.size.getWidth() / 2) + object.velocity.getX(), 0, 3, Setting.VELOCITY_GUI_ACTIVE, "right");
-        LinkedList<GameObject> detectedObjectsLeft = object.checkTrigger(0, 0, (-1) * (object.size.getWidth() / 2) + object.velocity.getX(), 0, 3, Setting.VELOCITY_GUI_ACTIVE, "left");
-        LinkedList<GameObject> detectedObjectsDown = object.checkTrigger(0, 0, 0, (object.size.getHeight() / 2) + object.velocity.getY(), 3, Setting.VELOCITY_GUI_ACTIVE, "down");
+        LinkedList<GameObject> detectedObjectsRight = object.checkTrigger(0, 0, (object.size.getWidth() / 2) + object.velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "right");
+        LinkedList<GameObject> detectedObjectsLeft = object.checkTrigger(0, 0, (-1) * (object.size.getWidth() / 2) + object.velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "left");
+        LinkedList<GameObject> detectedObjectsRightDown = object.checkTrigger((object.size.getWidth() / 2), 0, 0, (object.size.getHeight() / 2) + object.velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE, "rdown");
+        LinkedList<GameObject> detectedObjectsLeftDown = object.checkTrigger((-1) * (object.size.getWidth() / 2), 0, 0, (object.size.getHeight() / 2) + object.velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE, "ldown");
+        LinkedList<GameObject> detectedObjectsDownDown = object.checkTrigger((-1) * (object.size.getWidth() / 2), (object.size.getHeight() / 2) + object.velocity.getY() + 10, object.size.getWidth(), 0, Setting.VELOCITY_GUI_ACTIVE, "ddown");
         GameObject.staticGUIId = 0;
 
-        if(detectedObjectsRight.size() != 0 || detectedObjectsLeft.size() != 0) {
+        if(detectedObjectsRight.size() != 0) {
             //move if object movable
+            object.position.setX(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
             object.velocity.setX(0);
         }
-        if(detectedObjectsDown.size() == 0) {
-            //add gravity force to velocity y
+        if(detectedObjectsLeft.size() != 0) {
+            //move if object movable
+            object.position.setX(detectedObjectsRight.get(0).position.getX() + detectedObjectsRight.get(0).size.getWidth() / 2 + object.size.getWidth() / 2);
+            object.velocity.setX(0);
+        }
+        
+        if(detectedObjectsLeftDown.size() == 0 || detectedObjectsRightDown.size() == 0 || detectedObjectsDownDown.size() == 0) {
             object.velocity.addY(Setting.GRAVITY * 6);
         }
-        else{
-            object.position.setY(detectedObjectsDown.get(0).position.getY() - object.size.getHeight());
+        if(detectedObjectsRightDown.size() != 0) {
+            object.velocity.setY(0);
+            object.position.setY(detectedObjectsRightDown.get(0).position.getY() - object.size.getHeight());
+        }
+        if(detectedObjectsLeftDown.size() != 0) {
+            object.velocity.setY(0);
+            object.position.setY(detectedObjectsLeftDown.get(0).position.getY() - object.size.getHeight());
+        }
+        if(detectedObjectsDownDown.size() != 0) {
+            object.velocity.setY(0);
+            object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
+        }
+
+        if(detectedObjectsRight.size() != 0){
+            System.out.println(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 + ", " + object.position.getX() + object.size.getWidth() / 2);
         }
     }
 }
