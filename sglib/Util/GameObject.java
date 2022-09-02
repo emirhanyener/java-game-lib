@@ -90,7 +90,7 @@ public class GameObject{
 		this.position.addY(this.velocity.getY());
 	}
 
-	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, int step, boolean isVisible, String guiName){
+	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, boolean isVisible, String guiName){
 		if(isVisible){
 			if(GameObjects.getInstance().findGUIObject(guiName) == null){
 				GameObjects.getInstance().addGUIObject(new GUILine(new Position(), new Position()).setName(guiName).setColor(Color.GREEN));
@@ -102,6 +102,7 @@ public class GameObject{
 		}
 
 		LinkedList<GameObject> detectedObjects = new LinkedList<GameObject>();
+		int step = (int)(Math.sqrt(Math.pow(x - offsetX, 2) + Math.pow(y - offsetY, 2)));
 
 		for(int i = 0; i < step + 2; i++){
 			for(GameObject item : GameObjects.getInstance().getObjects()){
