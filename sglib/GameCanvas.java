@@ -24,12 +24,14 @@ public class GameCanvas extends JPanel{
 	
 	@Override
 	public void paint(Graphics g) {
+		//draw background
 		g.setColor(Setting.BACKGROUND_COLOR);
 		g.fillRect(0, 0, Setting.WINDOW_WIDTH, Setting.WINDOW_HEIGHT);
 		g.setColor(Setting.DEFAULT_COLOR);
 
 		//draw all gameobjects
 		for(GameObject item : GameObjects.getInstance().getObjects()) {
+			//if image is null, draw a square
 			if(item.getImage() == null)	{
 				g.setColor(Setting.DEFAULT_COLOR);
 				Polygon.draw(g, item);
@@ -44,6 +46,7 @@ public class GameCanvas extends JPanel{
 				});
 			}
 		}
+		//draw alerts
 		if(Setting.IS_ALERT_ACTIVE) {
 			int i = 0;
 			for(AlertInfo alert : Alert.getInstance().getAlerts()) {
@@ -66,6 +69,7 @@ public class GameCanvas extends JPanel{
 			}
 		}
 		
+		//draw gui objects
 		if(Setting.IS_GUI_ACTIVE){
 			for(GUI gui : GameObjects.getInstance().getGUIObjects()){
 				gui.draw(g);

@@ -3,6 +3,7 @@ package sglib.Util;
 public class KeyManager{
     private static KeyManager manager = null;
 
+    //Char keys
     boolean KeyA = false;
     boolean KeyB = false;
     boolean KeyC = false;
@@ -30,6 +31,7 @@ public class KeyManager{
     boolean KeyY = false;
     boolean KeyZ = false;
     
+    //Number keys
     boolean Key1 = false;
     boolean Key2 = false;
     boolean Key3 = false;
@@ -52,6 +54,7 @@ public class KeyManager{
     boolean KeyNum8 = false;
     boolean KeyNum9 = false;
 
+    //Symbol keys
     boolean KeyNumMultiply = false;
     boolean KeyNumAdd = false;
     boolean KeyNumSlash = false;
@@ -59,6 +62,7 @@ public class KeyManager{
     boolean KeyNumCompa = false;
     boolean KeyNumPeriod = false;
     
+    //Funtion keys
     boolean KeyF1 = false;
     boolean KeyF2 = false;
     boolean KeyF3 = false;
@@ -72,11 +76,13 @@ public class KeyManager{
     boolean KeyF11 = false;
     boolean KeyF12 = false;
 
+    //Arrow keys
     boolean KeyRight = false;
     boolean KeyLeft = false;
     boolean KeyUp = false;
     boolean KeyDown = false;
 
+    //Virtual keys
     boolean KeySpace = false;
     boolean KeyBackSpace = false;
     boolean KeyEscape = false;
@@ -90,8 +96,9 @@ public class KeyManager{
     boolean KeyTab = false;
     boolean KeyCapsLock = false;
     boolean KeyNumLock = false;
-
     boolean KeyEnter = false;
+
+    //Control keys
     boolean KeyShift = false;
     boolean KeyControl = false;
     boolean KeyAlt = false;
@@ -107,6 +114,7 @@ public class KeyManager{
         return manager;
     }
 
+    //getter funtions.
     public boolean isKeyA(){
         return this.KeyA;
     }

@@ -81,6 +81,8 @@ public class GameObject{
 		GameObjects.getInstance().addEvent(function);
 		return this;
 	}
+	
+	//add physics this object.
 	public void addPhysics(){
 		Physics p = new Physics(this);
 		GameObjects.getInstance().addPhysics(p);
@@ -92,6 +94,9 @@ public class GameObject{
 		this.position.addY(this.velocity.getY());
 	}
 
+	/*
+	 * Check trigger method is a trigger control system for detect any object in line.
+	 */
 	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, boolean isVisible, String guiName){
 		if(isVisible){
 			if(GameObjects.getInstance().findGUIObject(guiName) == null){
@@ -125,6 +130,7 @@ public class GameObject{
 		return detectedObjects;
 	}
 
+	//Destroy method is remove this object.
 	public void destroy(){
 		GameObject.remove(this.getName());
 	}

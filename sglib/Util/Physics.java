@@ -14,7 +14,7 @@ public class Physics {
 
     //calculate selected object
 	public void calculate() {
-        //loop all object
+        //detect object using gameobject checktrigger method.
         LinkedList<GameObject> detectedObjectsRight = object.checkTrigger(0, 0, (object.size.getWidth() / 2) + object.velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "right");
         LinkedList<GameObject> detectedObjectsLeft = object.checkTrigger(0, 0, (-1) * (object.size.getWidth() / 2) + object.velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "left");
         LinkedList<GameObject> detectedObjectsRightDown = object.checkTrigger((object.size.getWidth() / 2), 0, 0, (object.size.getHeight() / 2) + object.velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE, "rdown");
@@ -33,6 +33,7 @@ public class Physics {
             object.velocity.setX(0);
         }
         
+        //control for gravity
         if(detectedObjectsLeftDown.size() == 0 || detectedObjectsRightDown.size() == 0 || detectedObjectsDownDown.size() == 0) {
             object.velocity.addY(Setting.GRAVITY * 6);
         }
@@ -47,10 +48,6 @@ public class Physics {
         if(detectedObjectsDownDown.size() != 0) {
             object.velocity.setY(0);
             object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
-        }
-
-        if(detectedObjectsRight.size() != 0){
-            System.out.println(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 + ", " + object.position.getX() + object.size.getWidth() / 2);
         }
     }
 }

@@ -11,6 +11,7 @@ public class KeyController implements KeyListener{
         keys = KeyManager.getManager();
     }
 
+    //get single object.
     public static KeyController getManager(){
         if(manager == null){
             manager = new KeyController();

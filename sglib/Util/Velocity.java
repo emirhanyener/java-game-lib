@@ -34,5 +34,4 @@ public class Velocity {
 	public void addY(float Y){
 		this.Y += Y;
 	}
-
 }

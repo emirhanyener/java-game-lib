@@ -19,6 +19,8 @@ public class Polygon {
 			yPositions[i] = (int)(position.getY() + (size.getHeight()) * Math.sin(Math.toRadians(((180 - ((shape - 2) * 180) / shape) * i ) + 45)));
 		}
 		*/
+
+		//draw square
 		xPositions[0] = (int)item.position.getX() - item.size.getWidth() / 2 - (int)GameObjects.getInstance().getMainCamera().getPosition().getX();
 		yPositions[0] = (int)item.position.getY() - item.size.getHeight() / 2 - (int)GameObjects.getInstance().getMainCamera().getPosition().getY();
 		xPositions[1] = (int)item.position.getX() + item.size.getWidth() / 2 - (int)GameObjects.getInstance().getMainCamera().getPosition().getX();
