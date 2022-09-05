@@ -13,11 +13,11 @@ public class GameTest {
 
     public static void main(String[] args) {
         GameObject.create("o1", new Position(-500,500), new Size(1000, 30));
-        GameObject.create("o2", new Position(0,0), new Size(30, 30));
+        GameObject.create("player", new Position(0,0), new Size(30, 30));
         GameObjects.getInstance().setMainCamera(new FollowerCamera(GameObjects.getInstance().findObject("o2"), new Position(0, 0)));
         
-        GameObject.find("o2").addPhysics();
-        GameObject.find("o2").setFunction(new AlertEvent());
+        GameObject.find("player").addPhysics();
+        GameObject.find("player").setFunction(new AlertEvent());
 
         SGLib sglib = new SGLib();
         sglib.start();
