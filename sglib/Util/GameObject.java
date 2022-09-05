@@ -27,11 +27,13 @@ public class GameObject{
 		this.name = name;
 		this.position = position;
 		this.size = size;
+        this.image = null;
 	}
 	public GameObject(String name) {
+		this.isAbstract = true;
 		this.name = name;
 		this.position = new Position(0, 0);
-		this.size = new Size(50, 50);
+		this.size = new Size(0, 0);
         this.image = null;
 	}
 	
