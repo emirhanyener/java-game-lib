@@ -4,7 +4,6 @@ import sglib.Camera.Camera;
 import sglib.Cursor.Cursor;
 import sglib.Util.*;
 
-import java.awt.event.KeyListener;
 import java.awt.MouseInfo;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +13,7 @@ public class SGLib {
     public SGLib(){
 		gframe = new GameFrame();
 		gframe.frame.addMouseListener(Cursor.getInstance());
+		gframe.frame.addKeyListener(KeyController.getManager());
     }
 
 	//this method starts sglib
@@ -24,9 +24,6 @@ public class SGLib {
 	//setters
 	public void setMainCamera(Camera mainCamera) {
 		GameObjects.getInstance().setMainCamera(mainCamera);
-	}
-	public void setKeyListener(KeyListener kl){
-		gframe.frame.addKeyListener(kl);
 	}
 
 	//this method executes per refresh in game
