@@ -8,6 +8,7 @@ public class Setting {
 	public static final int WINDOW_POSITION_Y = 50;
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
+	public static final boolean MAXIMIZED = true;
 	//game settings
 	public static final long REFRESH_RATE = 10;
 	public static final float GRAVITY = 9.81f / 100;
