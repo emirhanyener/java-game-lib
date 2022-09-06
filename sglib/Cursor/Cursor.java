@@ -2,12 +2,12 @@ package sglib.Cursor;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.MouseInfo;
+import java.awt.event.MouseMotionListener;
 
 import sglib.GameObjects;
 import sglib.Util.Position;
 
-public class Cursor implements MouseListener{
+public class Cursor implements MouseListener, MouseMotionListener{
     private static Cursor cursor;
     private Position position;
     private boolean isClicking;
@@ -27,7 +27,7 @@ public class Cursor implements MouseListener{
     }
 
     public Position getGamePosition(){
-        return new Position((float)MouseInfo.getPointerInfo().getLocation().getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(), (float)MouseInfo.getPointerInfo().getLocation().getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
+        return new Position(position.getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(), position.getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
     }
 
     public Position getPosition() {
@@ -66,5 +66,17 @@ public class Cursor implements MouseListener{
     @Override
     public void mouseExited(MouseEvent e) {
         this.isInWindow = false;
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        position.setX(e.getX());
+        position.setY(e.getY());
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        position.setX(e.getX());
+        position.setY(e.getY());
     }
 }

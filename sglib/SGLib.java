@@ -13,6 +13,7 @@ public class SGLib {
     public SGLib(){
 		gframe = new GameFrame();
 		gframe.frame.addMouseListener(Cursor.getInstance());
+		gframe.frame.addMouseMotionListener(Cursor.getInstance());
 		gframe.frame.addKeyListener(KeyController.getManager());
     }
 
