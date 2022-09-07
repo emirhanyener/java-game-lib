@@ -4,6 +4,10 @@ public class Size {
 	private int width;
 	private int height;
 	
+	public Size() {
+		this.width = 0;
+		this.height = 0;
+	}
 	public Size(int width, int height) {
 		this.width = width;
 		this.height = height;
