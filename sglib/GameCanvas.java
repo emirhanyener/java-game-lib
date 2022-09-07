@@ -25,6 +25,7 @@ public class GameCanvas extends JPanel{
 	@Override
 	public void paint(Graphics g) {
 		//draw background
+		GlobalValues.getInstance().setCanvasSize(new Size(this.getWidth(), this.getHeight()));
 		g.setColor(Setting.BACKGROUND_COLOR);
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		g.setColor(Setting.DEFAULT_COLOR);

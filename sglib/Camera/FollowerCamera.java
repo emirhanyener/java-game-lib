@@ -1,5 +1,6 @@
 package sglib.Camera;
 
+import sglib.GlobalValues;
 import sglib.Setting;
 import sglib.Util.GameObject;
 import sglib.Util.Position;
@@ -33,6 +34,6 @@ public class FollowerCamera extends Camera{
 
     @Override
     public Position getPosition() {
-        return new Position(target.position.getX() + offset.getX() + (target.size.getWidth() / 2) - Setting.WINDOW_WIDTH / 2, target.position.getY() + offset.getY() + target.size.getHeight() - Setting.WINDOW_HEIGHT / 2);
+        return new Position(target.position.getX() + offset.getX() + (GlobalValues.getInstance().getCanvasSize().getWidth() / 2) - Setting.WINDOW_WIDTH / 2, target.position.getY() + offset.getY() + target.size.getHeight() - GlobalValues.getInstance().getCanvasSize().getHeight() / 2);
     }
 }
