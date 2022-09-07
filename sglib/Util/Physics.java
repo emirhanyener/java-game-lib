@@ -12,6 +12,19 @@ public class Physics {
         this.object = object;
     }
 
+    public GameObject getObject() {
+        return this.object;
+    }
+
+    public static Physics find(GameObject object) {
+        for (Physics item : GameObjects.getInstance().getPhysics()) {
+            if (item.getObject() == object) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     // calculate selected object
     public void calculate() {
         // detect object using gameobject checktrigger method.
@@ -76,6 +89,5 @@ public class Physics {
             object.velocity.setY(0);
             object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
         }
-
     }
 }

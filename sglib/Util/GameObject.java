@@ -91,9 +91,10 @@ public class GameObject {
 	}
 
 	// add physics this object.
-	public void addPhysics() {
+	public Physics addPhysics() {
 		Physics p = new Physics(this);
 		GameObjects.getInstance().addPhysics(p);
+		return p;
 	}
 
 	// add to position from velocity
