@@ -6,19 +6,20 @@ import sglib.GameObjects;
 public abstract class EventFunction {
     private GameObject object;
 
-    //automaticly add event to gameobjects
-    public EventFunction(){
+    // automaticly add event to gameobjects
+    public EventFunction() {
         GameObjects.getInstance().addEvent(this);
     }
 
-    //set / get object
+    // set / get object
     public void setObject(GameObject object) {
         this.object = object;
     }
+
     public GameObject getObject() {
         return this.object;
     }
 
-    //executed function
+    // executed function
     public abstract void execute();
 }

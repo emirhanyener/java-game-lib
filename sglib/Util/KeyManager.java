@@ -1,9 +1,9 @@
 package sglib.Util;
 
-public class KeyManager{
+public class KeyManager {
     private static KeyManager manager = null;
 
-    //Char keys
+    // Char keys
     boolean KeyA = false;
     boolean KeyB = false;
     boolean KeyC = false;
@@ -30,8 +30,8 @@ public class KeyManager{
     boolean KeyX = false;
     boolean KeyY = false;
     boolean KeyZ = false;
-    
-    //Number keys
+
+    // Number keys
     boolean Key1 = false;
     boolean Key2 = false;
     boolean Key3 = false;
@@ -54,15 +54,15 @@ public class KeyManager{
     boolean KeyNum8 = false;
     boolean KeyNum9 = false;
 
-    //Symbol keys
+    // Symbol keys
     boolean KeyNumMultiply = false;
     boolean KeyNumAdd = false;
     boolean KeyNumSlash = false;
     boolean KeyNumMinus = false;
     boolean KeyNumCompa = false;
     boolean KeyNumPeriod = false;
-    
-    //Funtion keys
+
+    // Funtion keys
     boolean KeyF1 = false;
     boolean KeyF2 = false;
     boolean KeyF3 = false;
@@ -76,13 +76,13 @@ public class KeyManager{
     boolean KeyF11 = false;
     boolean KeyF12 = false;
 
-    //Arrow keys
+    // Arrow keys
     boolean KeyRight = false;
     boolean KeyLeft = false;
     boolean KeyUp = false;
     boolean KeyDown = false;
 
-    //Virtual keys
+    // Virtual keys
     boolean KeySpace = false;
     boolean KeyBackSpace = false;
     boolean KeyEscape = false;
@@ -98,289 +98,360 @@ public class KeyManager{
     boolean KeyNumLock = false;
     boolean KeyEnter = false;
 
-    //Control keys
+    // Control keys
     boolean KeyShift = false;
     boolean KeyControl = false;
     boolean KeyAlt = false;
-    
-    private KeyManager(){
+
+    private KeyManager() {
 
     }
 
-    public static KeyManager getManager(){
-        if(manager == null){
+    public static KeyManager getManager() {
+        if (manager == null) {
             manager = new KeyManager();
         }
         return manager;
     }
 
-    //getter funtions.
-    public boolean isKeyA(){
+    // getter funtions.
+    public boolean isKeyA() {
         return this.KeyA;
     }
-    public boolean isKeyB(){
+
+    public boolean isKeyB() {
         return this.KeyB;
     }
-    public boolean isKeyC(){
+
+    public boolean isKeyC() {
         return this.KeyC;
     }
-    public boolean isKeyD(){
+
+    public boolean isKeyD() {
         return this.KeyD;
     }
-    public boolean isKeyE(){
+
+    public boolean isKeyE() {
         return this.KeyE;
     }
-    public boolean isKeyF(){
+
+    public boolean isKeyF() {
         return this.KeyF;
     }
-    public boolean isKeyG(){
+
+    public boolean isKeyG() {
         return this.KeyG;
     }
-    public boolean isKeyH(){
+
+    public boolean isKeyH() {
         return this.KeyH;
     }
-    public boolean isKeyI(){
+
+    public boolean isKeyI() {
         return this.KeyI;
     }
-    public boolean isKeyJ(){
+
+    public boolean isKeyJ() {
         return this.KeyJ;
     }
-    public boolean isKeyK(){
+
+    public boolean isKeyK() {
         return this.KeyK;
     }
-    public boolean isKeyL(){
+
+    public boolean isKeyL() {
         return this.KeyL;
     }
-    public boolean isKeyM(){
+
+    public boolean isKeyM() {
         return this.KeyM;
     }
-    public boolean isKeyN(){
+
+    public boolean isKeyN() {
         return this.KeyN;
     }
-    public boolean isKeyO(){
+
+    public boolean isKeyO() {
         return this.KeyO;
     }
-    public boolean isKeyP(){
+
+    public boolean isKeyP() {
         return this.KeyP;
     }
-    public boolean isKeyQ(){
+
+    public boolean isKeyQ() {
         return this.KeyQ;
     }
-    public boolean isKeyR(){
+
+    public boolean isKeyR() {
         return this.KeyR;
     }
-    public boolean isKeyS(){
+
+    public boolean isKeyS() {
         return this.KeyS;
     }
-    public boolean isKeyT(){
+
+    public boolean isKeyT() {
         return this.KeyT;
     }
-    public boolean isKeyU(){
+
+    public boolean isKeyU() {
         return this.KeyU;
     }
-    public boolean isKeyV(){
+
+    public boolean isKeyV() {
         return this.KeyV;
     }
-    public boolean isKeyW(){
+
+    public boolean isKeyW() {
         return this.KeyW;
     }
-    public boolean isKeyX(){
+
+    public boolean isKeyX() {
         return this.KeyX;
     }
-    public boolean isKeyY(){
+
+    public boolean isKeyY() {
         return this.KeyY;
     }
-    public boolean isKeyZ(){
+
+    public boolean isKeyZ() {
         return this.KeyZ;
     }
 
-
-    public boolean isKey1(){
+    public boolean isKey1() {
         return this.Key1;
     }
-    public boolean isKey2(){
+
+    public boolean isKey2() {
         return this.Key2;
     }
-    public boolean isKey3(){
+
+    public boolean isKey3() {
         return this.Key3;
     }
-    public boolean isKey4(){
+
+    public boolean isKey4() {
         return this.Key4;
     }
-    public boolean isKey5(){
+
+    public boolean isKey5() {
         return this.Key5;
     }
-    public boolean isKey6(){
+
+    public boolean isKey6() {
         return this.Key6;
     }
-    public boolean isKey7(){
+
+    public boolean isKey7() {
         return this.Key7;
     }
-    public boolean isKey8(){
+
+    public boolean isKey8() {
         return this.Key8;
     }
-    public boolean isKey9(){
+
+    public boolean isKey9() {
         return this.Key9;
     }
-    public boolean isKey0(){
+
+    public boolean isKey0() {
         return this.Key0;
     }
 
-
-    public boolean isKeyNum0(){
+    public boolean isKeyNum0() {
         return this.KeyNum0;
     }
-    public boolean isKeyNum1(){
+
+    public boolean isKeyNum1() {
         return this.KeyNum1;
     }
-    public boolean isKeyNum2(){
+
+    public boolean isKeyNum2() {
         return this.KeyNum2;
     }
-    public boolean isKeyNum3(){
+
+    public boolean isKeyNum3() {
         return this.KeyNum3;
     }
-    public boolean isKeyNum4(){
+
+    public boolean isKeyNum4() {
         return this.KeyNum4;
     }
-    public boolean isKeyNum5(){
+
+    public boolean isKeyNum5() {
         return this.KeyNum5;
     }
-    public boolean isKeyNum6(){
+
+    public boolean isKeyNum6() {
         return this.KeyNum6;
     }
-    public boolean isKeyNum7(){
+
+    public boolean isKeyNum7() {
         return this.KeyNum7;
     }
-    public boolean isKeyNum8(){
+
+    public boolean isKeyNum8() {
         return this.KeyNum8;
     }
-    public boolean isKeyNum9(){
+
+    public boolean isKeyNum9() {
         return this.KeyNum9;
     }
-    
-    
-    public boolean isKeyNumMultiply(){
+
+    public boolean isKeyNumMultiply() {
         return this.KeyNumMultiply;
     }
-    public boolean isKeyNumAdd(){
+
+    public boolean isKeyNumAdd() {
         return this.KeyNumAdd;
     }
-    public boolean isKeyNumSlash(){
+
+    public boolean isKeyNumSlash() {
         return this.KeyNumSlash;
     }
-    public boolean isKeyNumMinus(){
+
+    public boolean isKeyNumMinus() {
         return this.KeyNumMinus;
     }
-    public boolean isKeyNumCompa(){
+
+    public boolean isKeyNumCompa() {
         return this.KeyNumCompa;
     }
-    public boolean isKeyNumPeriod(){
+
+    public boolean isKeyNumPeriod() {
         return this.KeyNumPeriod;
     }
 
-
-    public boolean isKeyF1(){
+    public boolean isKeyF1() {
         return this.KeyF1;
     }
-    public boolean isKeyF2(){
+
+    public boolean isKeyF2() {
         return this.KeyF2;
     }
-    public boolean isKeyF3(){
+
+    public boolean isKeyF3() {
         return this.KeyF3;
     }
-    public boolean isKeyF4(){
+
+    public boolean isKeyF4() {
         return this.KeyF4;
     }
-    public boolean isKeyF5(){
+
+    public boolean isKeyF5() {
         return this.KeyF5;
     }
-    public boolean isKeyF6(){
+
+    public boolean isKeyF6() {
         return this.KeyF6;
     }
-    public boolean isKeyF7(){
+
+    public boolean isKeyF7() {
         return this.KeyF7;
     }
-    public boolean isKeyF8(){
+
+    public boolean isKeyF8() {
         return this.KeyF8;
     }
-    public boolean isKeyF9(){
+
+    public boolean isKeyF9() {
         return this.KeyF9;
     }
-    public boolean isKeyF10(){
+
+    public boolean isKeyF10() {
         return this.KeyF10;
     }
-    public boolean isKeyF11(){
+
+    public boolean isKeyF11() {
         return this.KeyF11;
     }
-    public boolean isKeyF12(){
+
+    public boolean isKeyF12() {
         return this.KeyF12;
     }
 
-
-    public boolean isKeyRight(){
+    public boolean isKeyRight() {
         return this.KeyRight;
     }
-    public boolean isKeyLeft(){
+
+    public boolean isKeyLeft() {
         return this.KeyLeft;
     }
-    public boolean isKeyUp(){
+
+    public boolean isKeyUp() {
         return this.KeyUp;
     }
-    public boolean isKeyDown(){
+
+    public boolean isKeyDown() {
         return this.KeyDown;
     }
-    
-    public boolean isKeySpace(){
+
+    public boolean isKeySpace() {
         return this.KeySpace;
     }
-    public boolean isKeyBackSpace(){
+
+    public boolean isKeyBackSpace() {
         return this.KeyBackSpace;
     }
-    public boolean isKeyEscape(){
+
+    public boolean isKeyEscape() {
         return this.KeyEscape;
     }
-    public boolean isKeyPrintScreen(){
+
+    public boolean isKeyPrintScreen() {
         return this.KeyPrintScreen;
     }
-    public boolean isKeyPause(){
+
+    public boolean isKeyPause() {
         return this.KeyPause;
     }
-    public boolean isKeyDelete(){
+
+    public boolean isKeyDelete() {
         return this.KeyDelete;
     }
-    public boolean isKeyHome(){
+
+    public boolean isKeyHome() {
         return this.KeyHome;
     }
-    public boolean isKeyPageUp(){
+
+    public boolean isKeyPageUp() {
         return this.KeyPageUp;
     }
-    public boolean isKeyPageDown(){
+
+    public boolean isKeyPageDown() {
         return this.KeyPageDown;
     }
-    public boolean isKeyEnd(){
+
+    public boolean isKeyEnd() {
         return this.KeyEnd;
     }
-    public boolean isKeyTab(){
+
+    public boolean isKeyTab() {
         return this.KeyTab;
     }
-    public boolean isKeyCapsLock(){
+
+    public boolean isKeyCapsLock() {
         return this.KeyCapsLock;
     }
-    public boolean isKeyNumLock(){
+
+    public boolean isKeyNumLock() {
         return this.KeyNumLock;
     }
 
-
-    public boolean isKeyEnter(){
+    public boolean isKeyEnter() {
         return this.KeyEnter;
     }
-    public boolean isKeyShift(){
+
+    public boolean isKeyShift() {
         return this.KeyShift;
     }
-    public boolean isKeyControl(){
+
+    public boolean isKeyControl() {
         return this.KeyControl;
     }
-    public boolean isKeyAlt(){
+
+    public boolean isKeyAlt() {
         return this.KeyAlt;
     }
 }

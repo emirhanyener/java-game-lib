@@ -6,7 +6,7 @@ import sglib.Util.EventFunction;
 import sglib.Util.GameObject;
 import sglib.Util.StaticValues.AlertLevel;
 
-public class CursorPosition extends EventFunction{
+public class CursorPosition extends EventFunction {
     @Override
     public void execute() {
         Alert.getInstance().setAlertRow(0, "Cursor position: " + Cursor.getInstance().getGamePosition().getX() + ", " + Cursor.getInstance().getGamePosition().getY(), AlertLevel.info);

@@ -3,7 +3,7 @@ package Test.AlertTest;
 import sglib.Util.*;
 import sglib.Util.StaticValues.AlertLevel;
 
-public class AlertEvent extends EventFunction{
+public class AlertEvent extends EventFunction {
     @Override
     public void execute() {
         Alert.getInstance().setAlertRow(0, "info: " + this.getObject().velocity.getY(), AlertLevel.info);

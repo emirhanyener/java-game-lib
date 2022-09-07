@@ -7,32 +7,34 @@ import java.awt.event.MouseMotionListener;
 import sglib.GameObjects;
 import sglib.Util.Position;
 
-public class Cursor implements MouseListener, MouseMotionListener{
+public class Cursor implements MouseListener, MouseMotionListener {
     private static Cursor cursor;
     private Position position;
     private boolean isClicking;
     private boolean isInWindow;
 
-    private Cursor(){
+    private Cursor() {
         this.position = new Position();
         this.isClicking = false;
         this.isInWindow = false;
     }
 
-    public static Cursor getInstance(){
-        if(cursor == null){
+    public static Cursor getInstance() {
+        if (cursor == null) {
             cursor = new Cursor();
         }
         return cursor;
     }
 
-    public Position getGamePosition(){
-        return new Position(position.getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(), position.getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
+    public Position getGamePosition() {
+        return new Position(position.getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(),
+                position.getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
     }
 
     public Position getPosition() {
         return position;
     }
+
     public void setPosition(Position position) {
         this.position = position;
     }
@@ -40,6 +42,7 @@ public class Cursor implements MouseListener, MouseMotionListener{
     public boolean isClicking() {
         return isClicking;
     }
+
     public boolean isInWindow() {
         return isInWindow;
     }

@@ -4,28 +4,31 @@ import sglib.Util.Position;
 
 public abstract class Camera {
 	private float zoomValue;
-    protected Position position;
+	protected Position position;
 
-	public Camera(){
+	public Camera() {
 		this.zoomValue = 1;
 	}
-	
-	//getters
-	public Position getCameraPosition(){
+
+	// getters
+	public Position getCameraPosition() {
 		return this.position;
 	}
-	public float getZoomValue(){
+
+	public float getZoomValue() {
 		return this.zoomValue;
 	}
 
-	//setters
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-	public void setZoomValue(float zoomValue){
+	// setters
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
+	public void setZoomValue(float zoomValue) {
 		this.zoomValue = zoomValue;
 	}
-	public void addZoomValue(float zoomValue){
+
+	public void addZoomValue(float zoomValue) {
 		this.zoomValue += zoomValue;
 	}
 

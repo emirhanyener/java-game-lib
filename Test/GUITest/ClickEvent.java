@@ -9,7 +9,7 @@ public class ClickEvent extends EventFunction {
 
     @Override
     public void execute() {
-        if(KeyManager.getManager().isKeySpace()){
+        if (KeyManager.getManager().isKeySpace()) {
             clickCount++;
             GameObjects.getInstance().findGUIObject("text1").toGUIText().setTextSize(clickCount);
             GameObjects.getInstance().findGUIObject("text1").toGUIText().setText("click counter : " + clickCount);

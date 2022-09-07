@@ -5,18 +5,19 @@ import sglib.Util.GameObject;
 import sglib.Util.Position;
 
 //follower camera follows a target object automaticly
-public class MultipleCamera extends Camera{
+public class MultipleCamera extends Camera {
     private GameObject[] targets;
     private Position offset;
 
-    //constuctors
-    public MultipleCamera(GameObject[] objects, Position offset){
+    // constuctors
+    public MultipleCamera(GameObject[] objects, Position offset) {
         this.targets = objects;
         this.offset = offset;
         this.position = new Position();
     }
-    //set offset position 0, 0 if offset not sended
-    public MultipleCamera(GameObject[] objects){
+
+    // set offset position 0, 0 if offset not sended
+    public MultipleCamera(GameObject[] objects) {
         this.targets = objects;
         this.offset = new Position();
         this.position = new Position();
@@ -37,7 +38,7 @@ public class MultipleCamera extends Camera{
 
     @Override
     public void setPosition(Position position) {
-        
+
     }
 
     @Override
@@ -49,6 +50,7 @@ public class MultipleCamera extends Camera{
             sumY += gameObject.position.getY();
         }
 
-        return new Position((sumX / targets.length) + offset.getX() - Setting.WINDOW_WIDTH / 2, (sumY / targets.length) + offset.getY() - Setting.WINDOW_HEIGHT / 2);
+        return new Position((sumX / targets.length) + offset.getX() - Setting.WINDOW_WIDTH / 2,
+                (sumY / targets.length) + offset.getY() - Setting.WINDOW_HEIGHT / 2);
     }
 }

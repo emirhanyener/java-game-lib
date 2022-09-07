@@ -2,20 +2,21 @@ package sglib.Util;
 
 public class Speed {
 	private float speed;
-	
+
 	public Speed() {
 		this.speed = 0;
 	}
+
 	public Speed(float speed) {
 		this.speed = speed;
 	}
-	
-	//getter
+
+	// getter
 	public float getSpeed() {
 		return speed;
 	}
 
-	//setter
+	// setter
 	public void setSpeed(float speed) {
 		this.speed = speed;
 	}

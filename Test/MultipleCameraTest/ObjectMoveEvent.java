@@ -2,7 +2,7 @@ package Test.MultipleCameraTest;
 
 import sglib.Util.*;
 
-public class ObjectMoveEvent extends EventFunction{
+public class ObjectMoveEvent extends EventFunction {
     @Override
     public void execute() {
         this.getObject().velocity.setX(1);
