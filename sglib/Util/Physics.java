@@ -6,14 +6,19 @@ import sglib.*;
 
 public class Physics {
     private GameObject object;
+    private boolean isGround;
 
     // set controlled object
     public Physics(GameObject object) {
         this.object = object;
+        this.isGround = false;
     }
 
     public GameObject getObject() {
         return this.object;
+    }
+    public boolean isGround() {
+        return isGround;
     }
 
     public static Physics find(GameObject object) {
@@ -27,6 +32,7 @@ public class Physics {
 
     // calculate selected object
     public void calculate() {
+        this.isGround = false;
         // detect object using gameobject checktrigger method.
         LinkedList<GameObject> detectedObjectsRight = object.checkTrigger(0, 0,
                 (object.size.getWidth() / 2) + object.velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "right");
@@ -47,6 +53,7 @@ public class Physics {
                 (-1) * (object.size.getHeight() / 2) + object.velocity.getY(), object.size.getWidth(), 0,
                 Setting.VELOCITY_GUI_ACTIVE, "uup");
         GameObject.staticGUIId = 0;
+
 
         if (detectedObjectsRight.size() != 0) {
             // move if object movable
@@ -72,22 +79,40 @@ public class Physics {
             object.position.setY(detectedObjectsUpUp.get(0).position.getY() + detectedObjectsUpUp.get(0).size.getHeight());
         }
         // control for gravity
-        if (detectedObjectsLeftDown.size() == 0 || detectedObjectsRightDown.size() == 0
+        if (detectedObjectsLeftDown.size() == 0 
+                || detectedObjectsRightDown.size() == 0
                 || detectedObjectsDownDown.size() == 0) {
             object.velocity.addY(Setting.GRAVITY * 6);
         }
 
         if (detectedObjectsRightDown.size() != 0) {
+            isGround = true;
             object.velocity.setY(0);
             object.position.setY(detectedObjectsRightDown.get(0).position.getY() - object.size.getHeight());
         }
         if (detectedObjectsLeftDown.size() != 0) {
+            isGround = true;
             object.velocity.setY(0);
             object.position.setY(detectedObjectsLeftDown.get(0).position.getY() - object.size.getHeight());
         }
         if (detectedObjectsDownDown.size() != 0) {
+            isGround = true;
             object.velocity.setY(0);
             object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
+        }
+
+        if(this.isGround) {
+            if(Math.abs(object.velocity.getX()) > 0.0000000001f){
+                object.velocity.addX((-1) * object.velocity.getX() / 10);
+            } else {
+                object.velocity.setX(0);
+            }
+        } else {
+            if(Math.abs(object.velocity.getX()) > 0.0000000001f){
+                object.velocity.addX((-1) * object.velocity.getX() / 100);
+            } else {
+                object.velocity.setX(0);
+            }
         }
     }
 }
