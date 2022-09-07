@@ -36,7 +36,7 @@ public class FollowerCamera extends Camera {
     @Override
     public Position getPosition() {
         return new Position(
-                target.position.getX() + offset.getX() + (GlobalValues.getInstance().getCanvasSize().getWidth() / 2) - Setting.WINDOW_WIDTH / 2,
+                target.position.getX() + offset.getX() - (GlobalValues.getInstance().getCanvasSize().getWidth() / 2),
                 target.position.getY() + offset.getY() + target.size.getHeight() - GlobalValues.getInstance().getCanvasSize().getHeight() / 2);
     }
 }
