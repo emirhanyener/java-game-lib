@@ -12,13 +12,13 @@ public class TriggerControl extends EventFunction {
         }
 
         if (KeyManager.getManager().isKeySpace()) {
-            GameObject.find("player").velocity.setY(-10);
+            GameObject.find("player").getPhysics().velocity.setY(-10);
         }
         if (KeyManager.getManager().isKeyLeft()) {
-            GameObject.find("player").velocity.setX(-1);
+            GameObject.find("player").getPhysics().velocity.setX(-1);
         }
         if (KeyManager.getManager().isKeyRight()) {
-            GameObject.find("player").velocity.setX(1);
+            GameObject.find("player").getPhysics().velocity.setX(1);
         }
     }
 }
