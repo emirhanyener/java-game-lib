@@ -8,6 +8,7 @@ public class Physics {
     private GameObject object;
     private boolean isGround;
     private boolean isFrictionActive;
+    private boolean isGravityActive;
 	public Velocity velocity = new Velocity();
 
     // set controlled object
@@ -15,6 +16,7 @@ public class Physics {
         this.object = object;
         this.isGround = false;
         this.isFrictionActive = true;
+        this.isGravityActive = true;
     }
 
     public GameObject getObject() {
@@ -26,8 +28,14 @@ public class Physics {
     public boolean isFrictionActive() {
         return isFrictionActive;
     }
+    public boolean isGravityActive() {
+        return isGravityActive;
+    }
     public void setFrictionActive(boolean isFrictionActive) {
         this.isFrictionActive = isFrictionActive;
+    }
+    public void setGravityActive(boolean isGravityActive) {
+        this.isGravityActive = isGravityActive;
     }
 
     public static Physics find(GameObject object) {
@@ -92,9 +100,10 @@ public class Physics {
             object.position.setY(detectedObjectsUpUp.get(0).position.getY() + detectedObjectsUpUp.get(0).size.getHeight());
         }
         // control for gravity
-        if (detectedObjectsLeftDown.size() == 0 
+        if ((detectedObjectsLeftDown.size() == 0 
                 || detectedObjectsRightDown.size() == 0
-                || detectedObjectsDownDown.size() == 0) {
+                || detectedObjectsDownDown.size() == 0)
+                && isGravityActive) {
             object.getPhysics().velocity.addY(Setting.GRAVITY * 6);
         }
 
