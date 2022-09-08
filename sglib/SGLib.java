@@ -43,11 +43,6 @@ public class SGLib {
 				item.execute();
 			}
 
-			// GameObject update
-			for (GameObject item : GameObjects.getInstance().getObjects()) {
-				item.calculate();
-			}
-
 			// Physics update
 			for (Physics item : GameObjects.getInstance().getPhysics()) {
 				item.calculate();

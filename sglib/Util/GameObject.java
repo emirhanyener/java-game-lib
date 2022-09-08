@@ -10,7 +10,6 @@ import sglib.GUI.*;
 public class GameObject {
 	protected String name;
 	public Position position;
-	public Velocity velocity = new Velocity();
 	public Size size;
 	public boolean isAbstract = false;
 	private Image image;
@@ -96,11 +95,8 @@ public class GameObject {
 		GameObjects.getInstance().addPhysics(p);
 		return p;
 	}
-
-	// add to position from velocity
-	public void calculate() {
-		this.position.addX(this.velocity.getX());
-		this.position.addY(this.velocity.getY());
+	public Physics getPhysics(){
+		return Physics.find(this);
 	}
 
 	/*
