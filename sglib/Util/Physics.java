@@ -7,12 +7,14 @@ import sglib.*;
 public class Physics {
     private GameObject object;
     private boolean isGround;
+    private boolean isFrictionActive;
 	public Velocity velocity = new Velocity();
 
     // set controlled object
     public Physics(GameObject object) {
         this.object = object;
         this.isGround = false;
+        this.isFrictionActive = true;
     }
 
     public GameObject getObject() {
@@ -20,6 +22,12 @@ public class Physics {
     }
     public boolean isGround() {
         return isGround;
+    }
+    public boolean isFrictionActive() {
+        return isFrictionActive;
+    }
+    public void setFrictionActive(boolean isFrictionActive) {
+        this.isFrictionActive = isFrictionActive;
     }
 
     public static Physics find(GameObject object) {
@@ -33,6 +41,7 @@ public class Physics {
 
     // calculate selected object
     public void calculate() {
+        //object position update
 		object.position.addX(velocity.getX());
 		object.position.addY(velocity.getY());
         
@@ -105,17 +114,19 @@ public class Physics {
             object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
         }
 
-        if(this.isGround) {
-            if(Math.abs(object.getPhysics().velocity.getX()) > 0.0000000001f){
-                object.getPhysics().velocity.addX((-1) * object.getPhysics().velocity.getX() / 10);
+        if(isFrictionActive){
+            if(this.isGround) {
+                if(Math.abs(object.getPhysics().velocity.getX()) > 0.0000000001f){
+                    object.getPhysics().velocity.addX((-1) * object.getPhysics().velocity.getX() / 10);
+                } else {
+                    object.getPhysics().velocity.setX(0);
+                }
             } else {
-                object.getPhysics().velocity.setX(0);
-            }
-        } else {
-            if(Math.abs(object.getPhysics().velocity.getX()) > 0.0000000001f){
-                object.getPhysics().velocity.addX((-1) * object.getPhysics().velocity.getX() / 100);
-            } else {
-                object.getPhysics().velocity.setX(0);
+                if(Math.abs(object.getPhysics().velocity.getX()) > 0.0000000001f){
+                    object.getPhysics().velocity.addX((-1) * object.getPhysics().velocity.getX() / 100);
+                } else {
+                    object.getPhysics().velocity.setX(0);
+                }
             }
         }
     }
