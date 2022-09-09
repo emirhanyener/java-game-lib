@@ -86,16 +86,22 @@ public class Physics {
 
         if (detectedObjectsRight.size() != 0) {
             // move if object movable
-            //eğer objenin fiziği var ise çarpışma yap
-            //kendinin ve diğerinin hızını ayarla
-            //v1 = ((m1 – m2)u1 + 2m2u2) / (m1 + m2)
-            //v2 = ((m2 – m1)u2 + 2m1u1) / (m1 + m2)
             if(Physics.find(detectedObjectsRight.get(0)) == null){
                 object.position.setX(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
                 velocity.setX(-this.velocity.getX());
                 detectedObjectsRight.get(0).getPhysics().velocity.setX(-detectedObjectsRight.get(0).getPhysics().velocity.getX());
+            }
+        }
+        if (detectedObjectsLeft.size() != 0) {
+            // move if object movable
+            if(Physics.find(detectedObjectsLeft.get(0)) == null){
+                object.position.setX(detectedObjectsLeft.get(0).position.getX() - detectedObjectsLeft.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
+                object.getPhysics().velocity.setX(0);
+            } else {
+                velocity.setX(-this.velocity.getX());
+                detectedObjectsLeft.get(0).getPhysics().velocity.setX(-detectedObjectsLeft.get(0).getPhysics().velocity.getX());
             }
         }
 
