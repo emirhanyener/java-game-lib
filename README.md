@@ -30,17 +30,10 @@ public class PlayerFunction extends EventFunction{
             GameObject.find("player").velocity.setY(-10);
         }
         if(KeyManager.getManager().isKeyLeft()){
-            GameObject.find("player").velocity.setX(-1);
+            GameObject.find("player").velocity.setX(-4);
         }
         if(KeyManager.getManager().isKeyRight()){
-            GameObject.find("player").velocity.setX(1);
-        }
-
-        if(!KeyManager.getManager().isKeyLeft() && !KeyManager.getManager().isKeyRight()){
-            GameObject.find("player").velocity.setX(0);
-        }
-        if(KeyManager.getManager().isKeyLeft() && KeyManager.getManager().isKeyRight()){
-            GameObject.find("player").velocity.setX(0);
+            GameObject.find("player").velocity.setX(4);
         }
     }
 }
