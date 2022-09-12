@@ -90,8 +90,18 @@ public class Physics {
                 object.position.setX(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
-                velocity.setX(-this.velocity.getX());
-                detectedObjectsRight.get(0).getPhysics().velocity.setX(-detectedObjectsRight.get(0).getPhysics().velocity.getX());
+                //v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2)
+                //v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2)
+                float m1 = this.mass;
+                float m2 = Physics.find(detectedObjectsRight.get(0)).mass;
+                float u1 = this.velocity.getX();
+                float u2 = Physics.find(detectedObjectsRight.get(0)).velocity.getX();
+                float v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2);
+                float v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2);
+                System.out.println("m1:" + m1 + ", u1:" + u1 + ", v1:" + v1);
+                System.out.println("m2:" + m2 + ", u2:" + u2 + ", v2:" + v2);
+                velocity.setX(v1);
+                detectedObjectsRight.get(0).getPhysics().velocity.setX(v2);
             }
         }
         if (detectedObjectsLeft.size() != 0) {
@@ -100,8 +110,16 @@ public class Physics {
                 object.position.setX(detectedObjectsLeft.get(0).position.getX() - detectedObjectsLeft.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
-                velocity.setX(-this.velocity.getX());
-                detectedObjectsLeft.get(0).getPhysics().velocity.setX(-detectedObjectsLeft.get(0).getPhysics().velocity.getX());
+                //v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2)
+                //v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2)
+                float m1 = this.mass;
+                float m2 = Physics.find(detectedObjectsLeft.get(0)).mass;
+                float u1 = this.velocity.getX();
+                float u2 = Physics.find(detectedObjectsLeft.get(0)).velocity.getX();
+                float v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2);
+                float v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2);
+                velocity.setX(v1);
+                detectedObjectsLeft.get(0).getPhysics().velocity.setX(v2);
             }
         }
 
