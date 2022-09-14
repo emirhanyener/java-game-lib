@@ -4,7 +4,6 @@ import sglib.Util.Alert;
 import sglib.Util.AlertInfo;
 import sglib.Util.GameObject;
 import sglib.Util.Polygon;
-import sglib.Util.Position;
 import sglib.Util.Size;
 import sglib.GUI.*;
 

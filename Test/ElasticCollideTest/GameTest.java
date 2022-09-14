@@ -1,7 +1,6 @@
 package Test.ElasticCollideTest;
 
 import sglib.*;
-import sglib.Camera.FollowerCamera;
 import sglib.Camera.StaticCamera;
 import sglib.Util.GameObject;
 import sglib.Util.Position;

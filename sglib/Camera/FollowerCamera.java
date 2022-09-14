@@ -1,7 +1,6 @@
 package sglib.Camera;
 
 import sglib.GlobalValues;
-import sglib.Setting;
 import sglib.Util.GameObject;
 import sglib.Util.Position;
 
