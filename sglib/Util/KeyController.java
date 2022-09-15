@@ -177,7 +177,7 @@ public class KeyController implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_SLASH) {
             keys.KeyNumSlash = true;
         }
-        if (e.getKeyCode() == KeyEvent.VK_MINUS) {
+        if (e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
             keys.KeyNumMinus = true;
         }
         if (e.getKeyCode() == KeyEvent.VK_COMMA) {
@@ -445,7 +445,7 @@ public class KeyController implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_SLASH) {
             keys.KeyNumSlash = false;
         }
-        if (e.getKeyCode() == KeyEvent.VK_MINUS) {
+        if (e.getKeyCode() == KeyEvent.VK_SUBTRACT) {
             keys.KeyNumMinus = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_COMMA) {
