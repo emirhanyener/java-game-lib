@@ -39,5 +39,8 @@ public class PlayerFunction extends EventFunction{
 }
 ```
 
-## LICENSE
+## Technologies
+- Java
+
+## License
 [MIT](LICENSE)
