@@ -1,5 +1,7 @@
 # Camera
 
+## Camera Types
+
 `sglib` has three camera type.
 - Static Camera
 - Follower Camera
@@ -32,3 +34,16 @@ GameObjects.getInstance().setMainCamera(new MultipleCamera(gameObjectArray, came
 `gameObjectArray`: gameObjects for follow as an gameObject array(GameObject[]).
 
 `cameraOffset`: Add temp position to current camera position(Position).
+
+## Camera Methods
+`Position getCameraPosition()`: Camera raw position.
+
+`Position getPosition()`: Camera calculated position.
+
+`void setPosition(Position position)`: Change position manually.
+
+`float getZoomValue()`
+
+`void setZoomValue(float zoomValue)`
+
+`void addZoomValue(float zoomValue)`
