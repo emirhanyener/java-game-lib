@@ -3,6 +3,7 @@ package sglib.Util;
 import java.awt.Graphics;
 
 import sglib.GameObjects;
+import sglib.Setting;
 
 public class Polygon {
 	private Polygon() {
@@ -22,16 +23,16 @@ public class Polygon {
 
 		
 		// position
-		xPositions[0] = (int) item.position.getX() - item.size.getWidth() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getX();
-		yPositions[0] = (int) item.position.getY() - item.size.getHeight() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getY();
+		xPositions[0] = (int) ((item.position.getX() - Setting.WINDOW_WIDTH / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_WIDTH / 2) - (int)((item.size.getWidth() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getX() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		yPositions[0] = (int) ((item.position.getY() - Setting.WINDOW_HEIGHT / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_HEIGHT / 2) - (int)((item.size.getHeight() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getY() * GameObjects.getInstance().getMainCamera().getZoomValue());
 
 		// size
-		xPositions[1] = (int)(((int) item.position.getX() + item.size.getWidth() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getX()) * GameObjects.getInstance().getMainCamera().getZoomValue());
-		yPositions[1] = (int) item.position.getY() - item.size.getHeight() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getY();
-		xPositions[2] = (int)(((int) item.position.getX() + item.size.getWidth() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getX()) * GameObjects.getInstance().getMainCamera().getZoomValue());
-		yPositions[2] = (int)(((int) item.position.getY() + item.size.getHeight() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getY()) * GameObjects.getInstance().getMainCamera().getZoomValue());
-		xPositions[3] = (int) item.position.getX() - item.size.getWidth() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getX();
-		yPositions[3] = (int)(((int) item.position.getY() + item.size.getHeight() / 2 - (int) GameObjects.getInstance().getMainCamera().getPosition().getY()) * GameObjects.getInstance().getMainCamera().getZoomValue());
+		xPositions[1] = (int) ((item.position.getX() - Setting.WINDOW_WIDTH / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_WIDTH / 2) + (int)((item.size.getWidth() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getX() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		yPositions[1] = (int) ((item.position.getY() - Setting.WINDOW_HEIGHT / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_HEIGHT / 2) - (int)((item.size.getHeight() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getY() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		xPositions[2] = (int) ((item.position.getX() - Setting.WINDOW_WIDTH / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_WIDTH / 2) + (int)((item.size.getWidth() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getX() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		yPositions[2] = (int) ((item.position.getY() - Setting.WINDOW_HEIGHT / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_HEIGHT / 2) + (int)((item.size.getHeight() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getY() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		xPositions[3] = (int) ((item.position.getX() - Setting.WINDOW_WIDTH / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_WIDTH / 2) - (int)((item.size.getWidth() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getX() * GameObjects.getInstance().getMainCamera().getZoomValue());
+		yPositions[3] = (int) ((item.position.getY() - Setting.WINDOW_HEIGHT / 2) * GameObjects.getInstance().getMainCamera().getZoomValue() + Setting.WINDOW_HEIGHT / 2) + (int)((item.size.getHeight() / 2) * GameObjects.getInstance().getMainCamera().getZoomValue()) - (int) (GameObjects.getInstance().getMainCamera().getPosition().getY() * GameObjects.getInstance().getMainCamera().getZoomValue());
 
 		g.fillPolygon(xPositions, yPositions, 4);
 	}
