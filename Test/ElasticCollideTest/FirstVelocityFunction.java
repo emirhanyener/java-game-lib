@@ -1,9 +1,9 @@
 package Test.ElasticCollideTest;
 
+import sglib.KeyManager.KeyManager;
 import sglib.Util.Alert;
 import sglib.Util.EventFunction;
 import sglib.Util.GameObject;
-import sglib.Util.KeyManager;
 import sglib.Util.StaticValues.AlertLevel;
 
 public class FirstVelocityFunction extends EventFunction {

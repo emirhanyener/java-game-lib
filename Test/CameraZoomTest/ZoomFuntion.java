@@ -1,10 +1,10 @@
 package Test.CameraZoomTest;
 
 import sglib.GameObjects;
+import sglib.KeyManager.KeyManager;
 import sglib.Util.Alert;
 import sglib.Util.EventFunction;
 import sglib.Util.GameObject;
-import sglib.Util.KeyManager;
 import sglib.Util.StaticValues.AlertLevel;
 
 public class ZoomFuntion extends EventFunction {

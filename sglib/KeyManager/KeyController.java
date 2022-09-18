@@ -1,4 +1,4 @@
-package sglib.Util;
+package sglib.KeyManager;
 
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;

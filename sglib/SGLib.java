@@ -2,6 +2,7 @@ package sglib;
 
 import sglib.Camera.Camera;
 import sglib.Cursor.Cursor;
+import sglib.KeyManager.KeyController;
 import sglib.Util.*;
 
 import java.awt.MouseInfo;

@@ -1,8 +1,8 @@
 package Test.GUITest;
 
 import sglib.GameObjects;
+import sglib.KeyManager.KeyManager;
 import sglib.Util.EventFunction;
-import sglib.Util.KeyManager;
 
 public class ClickEvent extends EventFunction {
     private int clickCount = 12;

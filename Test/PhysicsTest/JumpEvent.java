@@ -1,5 +1,6 @@
 package Test.PhysicsTest;
 
+import sglib.KeyManager.KeyManager;
 import sglib.Util.*;
 
 public class JumpEvent extends EventFunction {

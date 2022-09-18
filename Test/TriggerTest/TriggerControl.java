@@ -1,5 +1,6 @@
 package Test.TriggerTest;
 
+import sglib.KeyManager.KeyManager;
 import sglib.Util.*;
 
 public class TriggerControl extends EventFunction {

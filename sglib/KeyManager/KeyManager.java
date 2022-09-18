@@ -1,4 +1,4 @@
-package sglib.Util;
+package sglib.KeyManager;
 
 public class KeyManager {
     private static KeyManager manager = null;
