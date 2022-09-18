@@ -9,6 +9,7 @@ public class Physics {
     private boolean isGround;
     private boolean isFrictionActive;
     private boolean isGravityActive;
+    private boolean isAbstract;
     private float mass;
 	public Velocity velocity = new Velocity();
 
@@ -18,6 +19,7 @@ public class Physics {
         this.isGround = false;
         this.isFrictionActive = true;
         this.isGravityActive = true;
+        this.isAbstract = false;
         this.mass = 1;
     }
 
@@ -33,6 +35,9 @@ public class Physics {
     public boolean isGravityActive() {
         return isGravityActive;
     }
+    public boolean isAbstract() {
+        return isAbstract;
+    }
     public float getMass() {
         return mass;
     }
@@ -41,6 +46,9 @@ public class Physics {
     }
     public void setGravityActive(boolean isGravityActive) {
         this.isGravityActive = isGravityActive;
+    }
+    public void setAbstract(boolean isAbstract) {
+        this.isAbstract = isAbstract;
     }
     public void setMass(float mass) {
         this.mass = mass;
@@ -60,6 +68,9 @@ public class Physics {
         //object position update
 		object.position.addX(velocity.getX());
 		object.position.addY(velocity.getY());
+        if(this.isAbstract){
+            return;
+        }
         
         this.isGround = false;
         // detect object using gameobject checktrigger method.
@@ -90,16 +101,12 @@ public class Physics {
                 object.position.setX(detectedObjectsRight.get(0).position.getX() - detectedObjectsRight.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
-                //v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2)
-                //v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2)
                 float m1 = this.mass;
                 float m2 = Physics.find(detectedObjectsRight.get(0)).mass;
                 float u1 = this.velocity.getX();
                 float u2 = Physics.find(detectedObjectsRight.get(0)).velocity.getX();
                 float v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2);
                 float v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2);
-                System.out.println("m1:" + m1 + ", u1:" + u1 + ", v1:" + v1);
-                System.out.println("m2:" + m2 + ", u2:" + u2 + ", v2:" + v2);
                 velocity.setX(v1);
                 detectedObjectsRight.get(0).getPhysics().velocity.setX(v2);
             }
@@ -110,8 +117,6 @@ public class Physics {
                 object.position.setX(detectedObjectsLeft.get(0).position.getX() - detectedObjectsLeft.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
-                //v1 = ((m1 - m2) * u1) / (m1 + m2) + (2 * m2 * u2) / (m1 + m2)
-                //v2 = (2 * m1 * u1) / (m1 + m2) + ((m2 - m1) * u2) / (m1 + m2)
                 float m1 = this.mass;
                 float m2 = Physics.find(detectedObjectsLeft.get(0)).mass;
                 float u1 = this.velocity.getX();
@@ -157,6 +162,56 @@ public class Physics {
             isGround = true;
             object.getPhysics().velocity.setY(0);
             object.position.setY(detectedObjectsDownDown.get(0).position.getY() - object.size.getHeight());
+        }
+
+        //remove abstract objects
+        for(GameObject item : detectedObjectsRight){
+            if(item.isAbstract)
+            {
+                detectedObjectsRight.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsLeft){
+            if(item.isAbstract)
+            {
+                detectedObjectsLeft.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsRightDown){
+            if(item.isAbstract)
+            {
+                detectedObjectsRightDown.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsLeftDown){
+            if(item.isAbstract)
+            {
+                detectedObjectsLeftDown.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsDownDown){
+            if(item.isAbstract)
+            {
+                detectedObjectsDownDown.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsRightUp){
+            if(item.isAbstract)
+            {
+                detectedObjectsRightUp.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsLeftUp){
+            if(item.isAbstract)
+            {
+                detectedObjectsLeftUp.remove(item);
+            }
+        }
+        for(GameObject item : detectedObjectsUpUp){
+            if(item.isAbstract)
+            {
+                detectedObjectsUpUp.remove(item);
+            }
         }
 
         if(isFrictionActive){
