@@ -18,4 +18,8 @@ public abstract class Container <T>{
     public LinkedList<T> getAll(){
         return objects;
     }
+    // short usage
+    public T get(int index){
+        return objects.get(index);
+    }
 }
