@@ -18,7 +18,6 @@ public class Game {
         GameObjects.getInstance().setMainCamera(new MultipleCamera(new GameObject[] { GameObjects.getInstance().findObject("o1"),
                         GameObjects.getInstance().findObject("o2") }, new Position(0, 0)));
         
-        GameObject.find("o2").addPhysics();
         GameObject.find("o2").setFunction(new ObjectMoveEvent());
 
         SGLib sglib = new SGLib();
