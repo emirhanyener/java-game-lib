@@ -1,5 +1,5 @@
 # Cursor
-Cursor class is used to getting cursor position and cursor event datas. 
+Cursor class is used to getting cursor position and cursor event data. 
 
 ## Cursor Methods
 ### getPosition
