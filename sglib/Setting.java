@@ -8,7 +8,7 @@ public class Setting {
 	public static final int WINDOW_POSITION_Y = 50;
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
-	public static final boolean MAXIMIZED = true;
+	public static final boolean MAXIMIZED = false;
 	
 	// game settings
 	public static final long REFRESH_RATE = 10;
@@ -21,4 +21,5 @@ public class Setting {
 	public static final int STOKE_WIDTH = 2;
 	public static final boolean VELOCITY_GUI_ACTIVE = true;
 	public static final int KEY_REPEAT_DELAY = 10;
+	public static final boolean DEVELOPER_MODE = false;
 }
