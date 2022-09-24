@@ -14,7 +14,9 @@ GameObject.create(name, position, size);
 `position`: GameObject absolute position as Position class.
 `size`: GameObject size as Size class.
 
-## Static Functions
+## Static Methods
+Static methods are used for short use for GameObjects.
+
 ### create
 ```java
 GameObject.create(name);
