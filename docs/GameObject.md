@@ -53,3 +53,28 @@ GameObject.find(name);
 GameObject.add(gameObject);
 ```
 `gameObject`: Manually created gameobject.
+
+## Methods
+### Add Physics
+This method adds physics to selected gameobject and returns physics. 
+
+```java
+GameObject.find(name).addPhysics();
+```
+`name`: GameObject name.
+
+### Get Physics
+This method returns physics from linked gameobject.
+
+```java
+GameObject.find(name).getPhysics();
+```
+`name`: GameObject name.
+
+### Destroy
+This method destroys the selected gameobject from the game.
+
+```java
+GameObject.find(name).destroy();
+```
+`name`: GameObject name.
