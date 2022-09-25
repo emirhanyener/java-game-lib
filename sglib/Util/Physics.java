@@ -23,6 +23,7 @@ public class Physics {
         this.mass = 1;
     }
 
+    // getters
     public GameObject getObject() {
         return this.object;
     }
@@ -41,6 +42,8 @@ public class Physics {
     public float getMass() {
         return mass;
     }
+
+    //setters
     public void setFrictionActive(boolean isFrictionActive) {
         this.isFrictionActive = isFrictionActive;
     }
@@ -214,6 +217,7 @@ public class Physics {
             }
         }
 
+        // caltulate friction
         if(isFrictionActive){
             if(this.isGround) {
                 if(Math.abs(object.getPhysics().velocity.getX()) > 0.0000000001f){

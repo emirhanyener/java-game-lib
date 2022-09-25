@@ -89,7 +89,7 @@ public class GameObject {
 		return this;
 	}
 
-	// add physics this object.
+	// add physics to this object.
 	public Physics addPhysics() {
 		if(Physics.find(this) == null){
 			Physics p = new Physics(this);
@@ -98,6 +98,7 @@ public class GameObject {
 		}
 		return Physics.find(this);
 	}
+	// get linked physics to this gameobject.
 	public Physics getPhysics(){
 		return Physics.find(this);
 	}
@@ -138,12 +139,12 @@ public class GameObject {
 		return detectedObjects;
 	}
 
-	// Destroy method is remove this object.
+	// Destroy method removes this object from the game.
 	public void destroy() {
 		GameObject.remove(this.getName());
 	}
 
-	// execute triggered function if any object in object
+	// Execute triggered function if any object collide this object.
 	public void OnTriggered(GameObject object) {
 	};
 }
