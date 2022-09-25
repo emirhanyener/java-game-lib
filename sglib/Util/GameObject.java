@@ -91,9 +91,12 @@ public class GameObject {
 
 	// add physics this object.
 	public Physics addPhysics() {
-		Physics p = new Physics(this);
-		GameObjects.getInstance().addPhysics(p);
-		return p;
+		if(Physics.find(this) == null){
+			Physics p = new Physics(this);
+			GameObjects.getInstance().addPhysics(p);
+			return p;
+		}
+		return Physics.find(this);
 	}
 	public Physics getPhysics(){
 		return Physics.find(this);
