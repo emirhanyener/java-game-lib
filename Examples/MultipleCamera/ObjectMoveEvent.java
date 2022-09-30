@@ -2,18 +2,21 @@ package Examples.MultipleCamera;
 
 import sglib.Util.*;
 import sglib.KeyManager.*;
-import sglib.*;
 
 public class ObjectMoveEvent extends EventFunction {
     @Override
     public void execute() {
-        if(KeyManager.getManager().isKeyNumMinus()){
-            this.getObject().position.addX(1);
-            this.getObject().position.addY(0.5f);
+        if(KeyManager.getManager().isKeyUp()){
+            this.getObject().position.addY(-1);
         }
-        if(KeyManager.getManager().isKeyNumAdd()){
+        if(KeyManager.getManager().isKeyDown()){
+            this.getObject().position.addY(1);
+        }
+        if(KeyManager.getManager().isKeyRight()){
+            this.getObject().position.addX(1);
+        }
+        if(KeyManager.getManager().isKeyLeft()){
             this.getObject().position.addX(-1);
-            this.getObject().position.addY(-0.5f);
         }
     }
 }
