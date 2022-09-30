@@ -50,21 +50,28 @@ public class MultipleCamera extends Camera {
     public Position getPosition() {
         float sumX = 0;
         float sumY = 0;
-        float left = targets[0].position.getX();
-        float right = targets[0].position.getX() + targets[0].size.getWidth();
+        float left = targets[0].position.getX() - targets[0].size.getWidth() / 2;
+        float right = targets[0].position.getX() + targets[0].size.getWidth() / 2;
+        float up = targets[0].position.getY() - targets[0].size.getHeight() / 2;
+        float down = targets[0].position.getX() + targets[0].size.getHeight() / 2;
 
         for (GameObject gameObject : targets) {
             if(gameObject.position.getX() < left){
-                left = gameObject.position.getX();
+                left = gameObject.position.getX() - gameObject.size.getWidth() / 2;
             }
             if(gameObject.position.getX() > right){
-                right = gameObject.position.getX() + gameObject.size.getWidth();
+                right = gameObject.position.getX() + gameObject.size.getWidth() / 2;
+            }
+            if(gameObject.position.getY() < up){
+                up = gameObject.position.getY() - gameObject.size.getHeight() / 2;
+            }
+            if(gameObject.position.getY() > down){
+                down = gameObject.position.getY() + gameObject.size.getHeight() / 2;
             }
             sumX += gameObject.position.getX();
             sumY += gameObject.position.getY();
         }
-        //GameObjects.getInstance().getMainCamera().setZoomValue(1 + (float)(2 * Math.atan((0.5f * (right - left)) / (((sumX / targets.length) * (Setting.WINDOW_HEIGHT / Setting.WINDOW_WIDTH))))));
-        GameObjects.getInstance().getMainCamera().setZoomValue(1 + ((Setting.WINDOW_WIDTH - (right - left)) / Setting.WINDOW_WIDTH) * GameObjects.getInstance().getMainCamera().getZoomValue());
+        GameObjects.getInstance().getMainCamera().setZoomValue(1 + Math.min(((Setting.WINDOW_WIDTH - (right - left)) / Setting.WINDOW_WIDTH) * GameObjects.getInstance().getMainCamera().getZoomValue(), ((Setting.WINDOW_HEIGHT - (down - up)) / Setting.WINDOW_HEIGHT) * GameObjects.getInstance().getMainCamera().getZoomValue()));
                 
         return new Position((sumX / targets.length) + offset.getX() - Setting.WINDOW_WIDTH / 2,
                 (sumY / targets.length) + offset.getY() - Setting.WINDOW_HEIGHT / 2);
