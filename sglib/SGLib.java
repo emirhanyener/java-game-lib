@@ -2,6 +2,7 @@ package sglib;
 
 import sglib.Camera.Camera;
 import sglib.Cursor.Cursor;
+import sglib.Developer.DeveloperFrame;
 import sglib.KeyManager.KeyController;
 import sglib.Util.*;
 
@@ -48,6 +49,14 @@ public class SGLib {
 			for (Physics item : GameObjects.getInstance().getPhysics()) {
 				item.calculate();
 			}
+			
+			if(Setting.DEVELOPER_MODE){
+				if(!DeveloperFrame.getInstance().isVisible()){
+					DeveloperFrame.getInstance().setVisible(true);
+				}
+			}
+
+			GameTime.getInstance().addTime();
 			gframe.canvas.repaint();
 		}
 	}
