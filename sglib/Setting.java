@@ -20,6 +20,7 @@ public class Setting {
 	public static final boolean IS_GUI_ACTIVE = true;
 	public static final int STOKE_WIDTH = 2;
 	public static final boolean VELOCITY_GUI_ACTIVE = true;
+	public static final boolean IS_KEY_REPEAT = false;
 	public static final int KEY_REPEAT_DELAY = 10;
-	public static final boolean DEVELOPER_MODE = false;
+	public static final boolean DEVELOPER_MODE = true;
 }
