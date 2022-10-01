@@ -1,11 +1,16 @@
 package sglib.KeyManager;
 
 import java.awt.event.KeyListener;
+
+import sglib.GameTime;
+import sglib.Setting;
+
 import java.awt.event.KeyEvent;
 
 public class KeyController implements KeyListener {
     private static KeyController manager = null;
     private KeyManager keys = null;
+    private int tempTime = 0;
 
     private KeyController() {
         keys = KeyManager.getManager();
@@ -289,6 +294,12 @@ public class KeyController implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_ALT) {
             keys.KeyAlt = true;
         }
+        if(Setting.IS_KEY_REPEAT){
+            if(GameTime.getInstance().getRuntimeMilliseconds() > this.tempTime + Setting.KEY_REPEAT_DELAY){
+                this.tempTime = GameTime.getInstance().getRuntimeMilliseconds();
+                resetKeys();
+            }
+        }
     }
 
     ////////////////////////////// Key Up //////////////////////////////
@@ -557,5 +568,100 @@ public class KeyController implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_ALT) {
             keys.KeyAlt = false;
         }
+    }
+
+    public void resetKeys(){
+        keys.KeyA = false;
+        keys.KeyB = false;
+        keys.KeyC = false;
+        keys.KeyD = false;
+        keys.KeyE = false;
+        keys.KeyF = false;
+        keys.KeyG = false;
+        keys.KeyH = false;
+        keys.KeyI = false;
+        keys.KeyJ = false;
+        keys.KeyK = false;
+        keys.KeyL = false;
+        keys.KeyM = false;
+        keys.KeyN = false;
+        keys.KeyO = false;
+        keys.KeyP = false;
+        keys.KeyQ = false;
+        keys.KeyR = false;
+        keys.KeyS = false;
+        keys.KeyT = false;
+        keys.KeyU = false;
+        keys.KeyV = false;
+        keys.KeyW = false;
+        keys.KeyX = false;
+        keys.KeyY = false;
+        keys.KeyZ = false;
+        
+        keys.Key1 = false;
+        keys.Key2 = false;
+        keys.Key3 = false;
+        keys.Key4 = false;
+        keys.Key5 = false;
+        keys.Key6 = false;
+        keys.Key7 = false;
+        keys.Key8 = false;
+        keys.Key9 = false;
+        keys.Key0 = false;
+
+        keys.KeyNum0 = false;
+        keys.KeyNum1 = false;
+        keys.KeyNum2 = false;
+        keys.KeyNum3 = false;
+        keys.KeyNum4 = false;
+        keys.KeyNum5 = false;
+        keys.KeyNum6 = false;
+        keys.KeyNum7 = false;
+        keys.KeyNum8 = false;
+        keys.KeyNum9 = false;
+
+        keys.KeyNumMultiply = false;
+        keys.KeyNumAdd = false;
+        keys.KeyNumSlash = false;
+        keys.KeyNumMinus = false;
+        keys.KeyNumCompa = false;
+        keys.KeyNumPeriod = false;
+
+        keys.KeyF1 = false;
+        keys.KeyF2 = false;
+        keys.KeyF3 = false;
+        keys.KeyF4 = false;
+        keys.KeyF5 = false;
+        keys.KeyF6 = false;
+        keys.KeyF7 = false;
+        keys.KeyF8 = false;
+        keys.KeyF9 = false;
+        keys.KeyF10 = false;
+        keys.KeyF11 = false;
+        keys.KeyF12 = false;
+
+        keys.KeyRight = false;
+        keys.KeyLeft = false;
+        keys.KeyUp = false;
+        keys.KeyDown = false;
+
+        keys.KeySpace = false;
+        keys.KeyBackSpace = false;
+        keys.KeyEscape = false;
+        keys.KeyPrintScreen = false;
+        keys.KeyPause = false;
+        keys.KeyDelete = false;
+        keys.KeyHome = false;
+        keys.KeyPageUp = false;
+        keys.KeyPageDown = false;
+        keys.KeyEnd = false;
+        keys.KeyTab = false;
+        keys.KeyCapsLock = false;
+        keys.KeyNumLock = false;
+        keys.KeyEnter = false;
+
+        keys.KeyShift = false;
+        keys.KeyControl = false;
+        keys.KeyAlt = false;
     }
 }
