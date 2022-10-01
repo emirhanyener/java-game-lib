@@ -1,8 +1,8 @@
 # SGLib
-`SGLib` (Simple Game Library) is used to create simple 2D games. 
+## About
+`SGLib` is used to create simple 2D games. 
 
 ## Platform Game
-
 ### Main
 ```java
 public static void main(String[] args) {
