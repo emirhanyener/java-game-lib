@@ -82,6 +82,10 @@ public class GameObject {
 		GameObjects.getInstance().addObject(object);
 	}
 
+	public float distance(GameObject object){
+		return (float)(Math.sqrt(Math.pow(this.position.getX() - object.position.getX(), 2) + Math.pow(this.position.getY() - object.position.getY(), 2)));
+	}
+
 	// setters
 	public GameObject setFunction(EventFunction function) {
 		function.setObject(this);
