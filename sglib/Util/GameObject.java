@@ -110,15 +110,23 @@ public class GameObject {
 	/*
 	 * Check trigger method is a trigger control system for detect any object in line.
 	 */
-	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, boolean isVisible, String guiName) {
+	public LinkedList<GameObject> checkTrigger(float offsetX, float offsetY, float x, float y, boolean isVisible) {
 		if (isVisible) {
-			if (GameObjects.getInstance().findGUIObject(guiName) == null) {
-				GameObjects.getInstance().addGUIObject(new GUILine(new Position(), new Position()).setName(guiName).setColor(Color.GREEN));
+			if(GameObjects.getInstance().getGUIObjects().size() == 0) {
+				GameObjects.getInstance().addGUIObject(new GUILine(new Position(), new Position()).setName("gui" + staticGUIId).setColor(Color.GREEN));
 			}
-			GameObjects.getInstance().findGUIObject(guiName).getPosition().setX(this.position.getX() + offsetX);
-			GameObjects.getInstance().findGUIObject(guiName).getPosition().setY(this.position.getY() + offsetY);
-			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setX(this.position.getX() + offsetX + x);
-			GameObjects.getInstance().findGUIObject(guiName).toGUILine().getToPosition().setY(this.position.getY() + offsetY + y);
+			try{
+				GameObjects.getInstance().getGUIObjects().get(staticGUIId);
+			}
+			catch(Exception e){
+				GameObjects.getInstance().addGUIObject(new GUILine(new Position(), new Position()).setName("gui" + staticGUIId).setColor(Color.GREEN));
+			}
+			GameObjects.getInstance().getGUIObjects().get(staticGUIId).getPosition().setX(this.position.getX() + offsetX - GameObjects.getInstance().getMainCamera().getPosition().getX());
+			GameObjects.getInstance().getGUIObjects().get(staticGUIId).getPosition().setY(this.position.getY() + offsetY - GameObjects.getInstance().getMainCamera().getPosition().getY());
+			GameObjects.getInstance().getGUIObjects().get(staticGUIId).toGUILine().getToPosition().setX(this.position.getX() + offsetX + x - GameObjects.getInstance().getMainCamera().getPosition().getX());
+			GameObjects.getInstance().getGUIObjects().get(staticGUIId).toGUILine().getToPosition().setY(this.position.getY() + offsetY + y - GameObjects.getInstance().getMainCamera().getPosition().getY());
+			staticGUIId++;
+			System.out.println(GameObjects.getInstance().getGUIObjects().size());
 		}
 
 		LinkedList<GameObject> detectedObjects = new LinkedList<GameObject>();

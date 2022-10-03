@@ -29,9 +29,10 @@ public class GUILine extends GUI {
         g.setColor(this.getColor());
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(Setting.STOKE_WIDTH));
-        g2d.drawLine((int) (this.getPosition().getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()),
-                (int) (this.getPosition().getY() - GameObjects.getInstance().getMainCamera().getPosition().getY()),
-                (int) (this.toPosition.getX() - GameObjects.getInstance().getMainCamera().getPosition().getX()),
-                (int) (this.toPosition.getY() - GameObjects.getInstance().getMainCamera().getPosition().getY()));
+        g2d.drawLine(
+                (int) ((this.getPosition().getX())),
+                (int) ((this.getPosition().getY())),
+                (int) ((this.getToPosition().getX())),
+                (int) ((this.getToPosition().getY())));
     }
 }
