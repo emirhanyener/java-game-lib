@@ -78,24 +78,23 @@ public class Physics {
         this.isGround = false;
         // detect object using gameobject checktrigger method.
         LinkedList<GameObject> detectedObjectsRight = object.checkTrigger(0, 0,
-                (object.size.getWidth() / 2) + object.getPhysics().velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "right");
+                (object.size.getWidth() / 2) + object.getPhysics().velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsLeft = object.checkTrigger(0, 0,
-                (-1) * (object.size.getWidth() / 2) + object.getPhysics().velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE, "left");
+                (-1) * (object.size.getWidth() / 2) + object.getPhysics().velocity.getX(), 0, Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsRightDown = object.checkTrigger((object.size.getWidth() / 2), 0, 0,
-                (object.size.getHeight() / 2) + object.getPhysics().velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE, "rdown");
+                (object.size.getHeight() / 2) + object.getPhysics().velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsLeftDown = object.checkTrigger((-1) * (object.size.getWidth() / 2), 0, 0,
-                (object.size.getHeight() / 2) + object.getPhysics().velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE, "ldown");
+                (object.size.getHeight() / 2) + object.getPhysics().velocity.getY() + 10, Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsDownDown = object.checkTrigger((-1) * (object.size.getWidth() / 2),
                 (object.size.getHeight() / 2) + object.getPhysics().velocity.getY() + 10, object.size.getWidth(), 0,
-                Setting.VELOCITY_GUI_ACTIVE, "ddown");
+                Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsRightUp = object.checkTrigger((object.size.getWidth() / 2), 0, 0,
-                (-1) * (object.size.getHeight() / 2) + object.getPhysics().velocity.getY(), Setting.VELOCITY_GUI_ACTIVE, "rup");
+                (-1) * (object.size.getHeight() / 2) + object.getPhysics().velocity.getY(), Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsLeftUp = object.checkTrigger((-1) * (object.size.getWidth() / 2), 0, 0,
-                (-1) * (object.size.getHeight() / 2) + object.getPhysics().velocity.getY(), Setting.VELOCITY_GUI_ACTIVE, "lup");
+                (-1) * (object.size.getHeight() / 2) + object.getPhysics().velocity.getY(), Setting.VELOCITY_GUI_ACTIVE);
         LinkedList<GameObject> detectedObjectsUpUp = object.checkTrigger((-1) * (object.size.getWidth() / 2),
                 (-1) * (object.size.getHeight() / 2) + object.getPhysics().velocity.getY(), object.size.getWidth(), 0,
-                Setting.VELOCITY_GUI_ACTIVE, "uup");
-        GameObject.staticGUIId = 0;
+                Setting.VELOCITY_GUI_ACTIVE);
 
 
         if (detectedObjectsRight.size() != 0) {

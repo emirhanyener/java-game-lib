@@ -6,8 +6,8 @@ import sglib.Util.*;
 public class TriggerControl extends EventFunction {
     @Override
     public void execute() {
-        if (GameObject.find("player").checkTrigger(0, 0, 30, 0, true, "test") != null) {
-            for (GameObject item : GameObject.find("player").checkTrigger(0, 0, 30, 0, true, "test")) {
+        if (GameObject.find("player").checkTrigger(0, 0, 30, 0, true) != null) {
+            for (GameObject item : GameObject.find("player").checkTrigger(0, 0, 30, 0, true)) {
                 item.destroy();
             }
         }

@@ -40,7 +40,7 @@ public class GameObjects {
 	// search 'name' named gameobject
 	public GameObject findObject(String name) {
 		for (int i = 0; i < objects.size(); i++) {
-			if (objects.get(i).getName() == name) {
+			if (objects.get(i).getName().equals(name)) {
 				return objects.get(i);
 			}
 		}

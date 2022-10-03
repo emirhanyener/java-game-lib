@@ -58,6 +58,7 @@ public class SGLib {
 
 			GameTime.getInstance().addTime();
 			gframe.canvas.repaint();
+			GameObject.staticGUIId = 0;
 		}
 	}
 }
