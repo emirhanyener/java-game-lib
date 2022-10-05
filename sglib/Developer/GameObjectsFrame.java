@@ -12,16 +12,19 @@ import sglib.Util.*;
 public class GameObjectsFrame extends JFrame {
     public GameObjectsFrame(){
         this.setTitle("GameObjects Console");
-        this.setBounds(10, 10, 300, 600);
+        this.setBounds(10, 10, 500, 600);
         this.setLayout(new FlowLayout());
         //GameObjects.getInstance().getObjects().toArray()
-        String[][] rows = new String[GameObjects.getInstance().getObjects().size()][2];
+        String[][] rows = new String[GameObjects.getInstance().getObjects().size() + 1][3];
         for(int i = 0; i < GameObjects.getInstance().getObjects().size(); i++){
             rows[i][0] = GameObjects.getInstance().getObjects().get(i).getName();
-            rows[i][1] = GameObjects.getInstance().getObjects().get(i).position.getX() + ", " + GameObjects.getInstance().getObjects().get(i).position.getY();
+            rows[i][1] = String.valueOf(GameObjects.getInstance().getObjects().get(i).position.getX());
+            rows[i][2] = String.valueOf(GameObjects.getInstance().getObjects().get(i).position.getY());
         }
         
-        JTable table = new JTable(rows, new String[]{"Name", "Position"});
-        this.add(table);
+        JTable table = new JTable(rows, new String[]{"Name", "X Position", "Y Position"});
+        JScrollPane sp = new JScrollPane(table);
+
+        this.add(sp);
     }
 }
