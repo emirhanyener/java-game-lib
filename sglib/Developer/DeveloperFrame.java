@@ -6,9 +6,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import sglib.GameObjects;
+
 public class DeveloperFrame extends JFrame{
     private static DeveloperFrame frame = null;
-    private static GameObjectsFrame gameObjectsFrame = null;
+    public GameObjectsFrame gameObjectsFrame = null;
 
     private DeveloperFrame(){
         this.setTitle("Developer Console");
@@ -35,6 +37,7 @@ public class DeveloperFrame extends JFrame{
         });
         this.add(gameObjectsBtn);
 
+        GameObjects.getInstance().addConsole(gameObjectsFrame);
     }
 
     public static DeveloperFrame getInstance(){

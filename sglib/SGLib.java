@@ -54,6 +54,7 @@ public class SGLib {
 				if(!DeveloperFrame.getInstance().isVisible()){
 					DeveloperFrame.getInstance().setVisible(true);
 				}
+				GameObjects.getInstance().updateConsole();
 			}
 
 			GameTime.getInstance().addTime();
