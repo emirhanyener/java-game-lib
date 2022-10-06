@@ -4,6 +4,7 @@ import sglib.Util.GameObject;
 import sglib.Util.Physics;
 import sglib.Camera.Camera;
 import sglib.Camera.StaticCamera;
+import sglib.Developer.DeveloperConsole;
 import sglib.Util.EventFunction;
 import sglib.GUI.*;
 
@@ -16,6 +17,7 @@ public class GameObjects {
 	private LinkedList<Physics> physics = new LinkedList<Physics>();
 	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
 	private LinkedList<GUI> gui = new LinkedList<GUI>();
+	private LinkedList<DeveloperConsole> developer = new LinkedList<DeveloperConsole>();
 
 	// for return single instance
 	public static GameObjects getInstance() {
@@ -106,6 +108,15 @@ public class GameObjects {
 		}
 
 		return null;
+	}
+
+	public void addConsole(DeveloperConsole console){
+		developer.add(console);
+	}
+	public void updateConsole(){
+		for(DeveloperConsole item : developer){
+			item.update();
+		}
 	}
 
 	// get all gui objects
