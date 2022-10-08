@@ -68,9 +68,6 @@ public class Physics {
 
     // calculate selected object
     public void calculate() {
-        //object position update
-		object.position.addX(velocity.getX());
-		object.position.addY(velocity.getY());
         if(this.isAbstract){
             return;
         }
@@ -232,5 +229,9 @@ public class Physics {
                 }
             }
         }
+        
+        //object position update
+		object.position.addX(velocity.getX());
+		object.position.addY(velocity.getY());
     }
 }
