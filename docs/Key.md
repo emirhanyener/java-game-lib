@@ -4,186 +4,186 @@ Key management is used for easily key management for game scripts.
 ## Usage
 ```java
     if(KeyManager.getManager().isKey{key_name}()){
-
+        //to do
     }
 ```
 `key_name`: controlled key name.
 
 ## Key Names
 ### Char Keys
-KeyA
+`KeyA`
 
-KeyB
+`KeyB`
 
-KeyC
+`KeyC`
 
-KeyD
+`KeyD`
 
-KeyE
+`KeyE`
 
-KeyF
+`KeyF`
 
-KeyG
+`KeyG`
 
-KeyH
+`KeyH`
 
-KeyI
+`KeyI`
 
-KeyJ
+`KeyJ`
 
-KeyK
+`KeyK`
 
-KeyL
+`KeyL`
 
-KeyM
+`KeyM`
 
-KeyN
+`KeyN`
 
-KeyO
+`KeyO`
 
-KeyP
+`KeyP`
 
-KeyQ
+`KeyQ`
 
-KeyR
+`KeyR`
 
-KeyS
+`KeyS`
 
-KeyT
+`KeyT`
 
-KeyU
+`KeyU`
 
-KeyV
+`KeyV`
 
-KeyW
+`KeyW`
 
-KeyX
+`KeyX`
 
-KeyY
+`KeyY`
 
-KeyZ
+`KeyZ`
 
 ### Number Keys
-Key1
+`Key1`
 
-Key2
+`Key2`
 
-Key3
+`Key3`
 
-Key4
+`Key4`
 
-Key5
+`Key5`
 
-Key6
+`Key6`
 
-Key7
+`Key7`
 
-Key8
+`Key8`
 
-Key9
+`Key9`
 
-Key0
+`Key0`
 
 
-KeyNum0
+`KeyNum0`
 
-KeyNum1
+`KeyNum1`
 
-KeyNum2
+`KeyNum2`
 
-KeyNum3
+`KeyNum3`
 
-KeyNum4
+`KeyNum4`
 
-KeyNum5
+`KeyNum5`
 
-KeyNum6
+`KeyNum6`
 
-KeyNum7
+`KeyNum7`
 
-KeyNum8
+`KeyNum8`
 
-KeyNum9
+`KeyNum9`
 
 ### Symbol Keys
-KeyNumMultiply
+`KeyNumMultiply`
 
-KeyNumAdd
+`KeyNumAdd`
 
-KeyNumSlash
+`KeyNumSlash`
 
-KeyNumMinus
+`KeyNumMinus`
 
-KeyNumCompa
+`KeyNumCompa`
 
-KeyNumPeriod
+`KeyNumPeriod`
 
 ### Funtion Keys
-KeyF1
+`KeyF1`
 
-KeyF2
+`KeyF2`
 
-KeyF3
+`KeyF3`
 
-KeyF4
+`KeyF4`
 
-KeyF5
+`KeyF5`
 
-KeyF6
+`KeyF6`
 
-KeyF7
+`KeyF7`
 
-KeyF8
+`KeyF8`
 
-KeyF9
+`KeyF9`
 
-KeyF10
+`KeyF10`
 
-KeyF11
+`KeyF11`
 
-KeyF12
+`KeyF12`
 
 ### Arrow Keys
-KeyRight
+`KeyRight`
 
-KeyLeft
+`KeyLeft`
 
-KeyUp
+`KeyUp`
 
-KeyDown
+`KeyDown`
 
 ### Virtual Keys
-KeySpace
+`KeySpace`
 
-KeyBackSpace
+`KeyBackSpace`
 
-KeyEscape
+`KeyEscape`
 
-KeyPrintScreen
+`KeyPrintScreen`
 
-KeyPause
+`KeyPause`
 
-KeyDelete
+`KeyDelete`
 
-KeyHome
+`KeyHome`
 
-KeyPageUp
+`KeyPageUp`
 
-KeyPageDown
+`KeyPageDown`
 
-KeyEnd
+`KeyEnd`
 
-KeyTab
+`KeyTab`
 
-KeyCapsLock
+`KeyCapsLock`
 
-KeyNumLock
+`KeyNumLock`
 
-KeyEnter
+`KeyEnter`
 
 ### Control Keys
-KeyShift
+`KeyShift`
 
-KeyControl
+`KeyControl`
 
-KeyAlt
+`KeyAlt`
