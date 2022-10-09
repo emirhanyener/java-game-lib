@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import java.awt.*;
 
 import sglib.GameObjects;
 
@@ -14,15 +15,15 @@ public class DeveloperFrame extends JFrame{
     public PhysicsFrame physicsFrame = null;
 
     private DeveloperFrame(){
-        this.setTitle("Developer Console");
-        this.setBounds(10, 10, 300, 600);
-        this.setLayout(new FlowLayout());
+        this.setTitle("Developer Menu");
+        this.setBounds(10, 10, 300, 300);
+        this.setLayout(new GridLayout(3, 1));
         gameObjectsFrame = new GameObjectsFrame();
         physicsFrame = new PhysicsFrame();
         gameObjectsFrame.setVisible(false);
         physicsFrame.setVisible(false);
 
-        JButton shutdownBtn = new JButton("shutdown");
+        JButton shutdownBtn = new JButton("Shutdown");
         shutdownBtn.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {

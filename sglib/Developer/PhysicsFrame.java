@@ -16,7 +16,7 @@ public class PhysicsFrame extends JFrame implements DeveloperConsole{
 
     public PhysicsFrame(){
         this.setTitle("Physics Console");
-        this.setBounds(10, 10, 500, 600);
+        this.setBounds(10, 220, 500, 200);
         this.setLayout(new FlowLayout());
         //GameObjects.getInstance().getObjects().toArray()
         rows = new String[GameObjects.getInstance().getPhysics().size()][4];
