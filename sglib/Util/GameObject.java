@@ -126,7 +126,6 @@ public class GameObject {
 			GameObjects.getInstance().getGUIObjects().get(staticGUIId).toGUILine().getToPosition().setX(this.position.getX() + offsetX + x - GameObjects.getInstance().getMainCamera().getPosition().getX());
 			GameObjects.getInstance().getGUIObjects().get(staticGUIId).toGUILine().getToPosition().setY(this.position.getY() + offsetY + y - GameObjects.getInstance().getMainCamera().getPosition().getY());
 			staticGUIId++;
-			System.out.println(GameObjects.getInstance().getGUIObjects().size());
 		}
 
 		LinkedList<GameObject> detectedObjects = new LinkedList<GameObject>();
