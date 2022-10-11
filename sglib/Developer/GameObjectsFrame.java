@@ -1,14 +1,9 @@
 package sglib.Developer;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
 
 import sglib.GameObjects;
-import sglib.Util.*;
 
 public class GameObjectsFrame extends JFrame implements DeveloperConsole{
     JTable table = new JTable();

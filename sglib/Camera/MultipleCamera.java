@@ -2,11 +2,8 @@ package sglib.Camera;
 
 import sglib.GameObjects;
 import sglib.Setting;
-import sglib.KeyManager.KeyManager;
-import sglib.Util.Alert;
 import sglib.Util.GameObject;
 import sglib.Util.Position;
-import sglib.Util.StaticValues.AlertLevel;
 
 //follower camera follows a target object automaticly
 public class MultipleCamera extends Camera {

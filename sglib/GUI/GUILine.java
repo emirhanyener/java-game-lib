@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.BasicStroke;
 
-import sglib.GameObjects;
 import sglib.Setting;
 import sglib.Util.*;
 
