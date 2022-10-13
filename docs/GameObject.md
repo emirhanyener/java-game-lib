@@ -85,8 +85,13 @@ This method returns triggered object list.
 object.checkTrigger(offsetX, offsetY, x, y, isVisible);
 ```
 `object`: GameObject type object.
+
 `offsetX`: x offset position for trigger.
+
 `offsetY`: y offset position for trigger.
+
 `x`: gameObject to x value.
+
 `y`: gameObject to y value.
+
 `isVisible`: Is lines visible?
