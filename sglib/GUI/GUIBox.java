@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 import sglib.Util.Size;
 
+//GUIText object draws solid box to canvas
 public class GUIBox extends GUI {
     private Size size;
 

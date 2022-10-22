@@ -7,6 +7,7 @@ import java.awt.BasicStroke;
 import sglib.Setting;
 import sglib.Util.*;
 
+//GUIText object draws line to canvas
 public class GUILine extends GUI {
     private Position toPosition;
 

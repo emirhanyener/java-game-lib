@@ -13,6 +13,13 @@ public class DeveloperFrame extends JFrame{
     public GameObjectsFrame gameObjectsFrame = null;
     public PhysicsFrame physicsFrame = null;
 
+    /*
+     * Main developer panel
+     * Buttons
+     * -shutdown game
+     * -show gameobject panel
+     * -show physics panel
+     */
     private DeveloperFrame(){
         this.setTitle("Developer Menu");
         this.setBounds(10, 10, 300, 300);

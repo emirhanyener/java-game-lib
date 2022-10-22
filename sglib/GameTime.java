@@ -1,5 +1,6 @@
 package sglib;
 
+//GameTime stores game elapsed time
 public class GameTime {
     private static GameTime instance = null;
     private int milliseconds = 0;

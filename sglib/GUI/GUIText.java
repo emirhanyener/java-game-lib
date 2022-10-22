@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+//GUIText object draws text to canvas
 public class GUIText extends GUI {
     private String text;
     private int textSize = 12;

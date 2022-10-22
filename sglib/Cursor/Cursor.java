@@ -26,11 +26,13 @@ public class Cursor implements MouseListener, MouseMotionListener {
         return cursor;
     }
 
+    //This method adds camera position to cursor.
     public Position getGamePosition() {
         return new Position(position.getX() + GameObjects.getInstance().getMainCamera().getPosition().getX(),
                 position.getY() + GameObjects.getInstance().getMainCamera().getPosition().getY());
     }
 
+    //This method returns global cursor position.
     public Position getPosition() {
         return position;
     }
@@ -71,6 +73,7 @@ public class Cursor implements MouseListener, MouseMotionListener {
         this.isInWindow = false;
     }
 
+    //update cursor position.
     @Override
     public void mouseDragged(MouseEvent e) {
         position.setX(e.getX());

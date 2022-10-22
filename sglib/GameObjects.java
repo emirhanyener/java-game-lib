@@ -110,6 +110,7 @@ public class GameObjects {
 		return null;
 	}
 
+	//Developer console add and update functions
 	public void addConsole(DeveloperConsole console){
 		developer.add(console);
 	}

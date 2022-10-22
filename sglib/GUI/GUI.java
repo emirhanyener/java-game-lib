@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import sglib.Setting;
 import sglib.Util.Position;
 
+//GUIText object is base draw object
 public abstract class GUI {
     private String name;
     private Color color;
