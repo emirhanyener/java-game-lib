@@ -13,6 +13,7 @@ public class GameObject {
 	public Size size;
 	public boolean isAbstract = false;
 	private Image image;
+	private Color color;
 	public static int staticGUIId = 0;
 
 	// constructors
@@ -51,9 +52,17 @@ public class GameObject {
 		return image;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+
 	// set object image
 	public void setImage(Image image) {
 		this.image = image;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 
 	// static methods
