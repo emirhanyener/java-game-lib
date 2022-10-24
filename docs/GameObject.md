@@ -79,6 +79,14 @@ GameObject.find(name).destroy();
 ```
 `name`: GameObject name.
 
+### setColor
+This method sets gameobject drawing color.
+
+```java
+GameObject.find(name).setColor(color);
+```
+`color`: GameObject custom color.
+
 ### checkTrigger
 This method returns triggered object list.
 ```java
