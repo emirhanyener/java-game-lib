@@ -33,7 +33,10 @@ public class GameCanvas extends JPanel {
 		for (GameObject item : GameObjects.getInstance().getObjects()) {
 			// if image is null, draw a square
 			if (item.getImage() == null) {
-				g.setColor(Setting.DEFAULT_COLOR);
+				if(item.getColor() == null) 
+					g.setColor(Setting.DEFAULT_COLOR); 
+				else 
+					g.setColor(item.getColor());
 				Polygon.draw(g, item);
 			} else {
 				g.drawImage(item.getImage(),
