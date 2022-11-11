@@ -12,8 +12,8 @@ public class GameObjectsFrame extends JFrame implements DeveloperConsole{
     //Added gameobjects info panel
     public GameObjectsFrame(){
         this.setTitle("GameObjects Console");
-        this.setBounds(10, 10, 500, 200);
-        this.setLayout(new FlowLayout());
+        this.setBounds(10, 10, 520, 220);
+        this.setLayout(null);
         
         rows = new String[GameObjects.getInstance().getObjects().size()][3];
         for(int i = 0; i < GameObjects.getInstance().getObjects().size(); i++){
@@ -24,6 +24,7 @@ public class GameObjectsFrame extends JFrame implements DeveloperConsole{
 
         table = new JTable(rows, new String[]{"Name", "X Position", "Y Position"});
         JScrollPane sp = new JScrollPane(table);
+        sp.setBounds(0,0,520,185);
 
         this.add(sp);
     }
