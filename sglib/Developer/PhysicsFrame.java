@@ -12,8 +12,8 @@ public class PhysicsFrame extends JFrame implements DeveloperConsole{
     //Added physics info panel
     public PhysicsFrame(){
         this.setTitle("Physics Console");
-        this.setBounds(10, 220, 500, 200);
-        this.setLayout(new FlowLayout());
+        this.setBounds(10, 220, 520, 220);
+        this.setLayout(null);
         
         rows = new String[GameObjects.getInstance().getPhysics().size()][4];
         for(int i = 0; i < GameObjects.getInstance().getPhysics().size(); i++){
@@ -25,6 +25,7 @@ public class PhysicsFrame extends JFrame implements DeveloperConsole{
         
         table = new JTable(rows, new String[]{"Name", "X Velocity", "Y Velocity", "Mass"});
         JScrollPane sp = new JScrollPane(table);
+        sp.setBounds(0,0,520,185);
 
         this.add(sp);
     }
