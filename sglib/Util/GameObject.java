@@ -64,6 +64,12 @@ public class GameObject {
 	public void setColor(Color color) {
 		this.color = color;
 	}
+	public void setColor(int r, int g, int b) {
+		this.color = new Color(r, g, b);
+	}
+	public void setColor(int r, int g, int b, int a) {
+		this.color = new Color(r, g, b, a);
+	}
 
 	// static methods
 	// (short usage)
