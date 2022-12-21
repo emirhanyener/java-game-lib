@@ -1,7 +1,7 @@
 package sglib.Scene;
 
 public abstract class Scene {
-    private Scene(){
+    public Scene(){
         this.setup();
     }
     
