@@ -7,6 +7,7 @@ import sglib.Camera.StaticCamera;
 import sglib.Developer.DeveloperConsole;
 import sglib.Util.EventFunction;
 import sglib.GUI.*;
+import sglib.Scene.Scene;
 
 import java.util.LinkedList;
 
@@ -15,6 +16,7 @@ public class GameObjects {
 	private Camera mainCamera = null;
 	private LinkedList<GameObject> objects = new LinkedList<GameObject>();
 	private LinkedList<Physics> physics = new LinkedList<Physics>();
+	private LinkedList<Scene> scenes = new LinkedList<Scene>();
 	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
 	private LinkedList<GUI> gui = new LinkedList<GUI>();
 	private LinkedList<DeveloperConsole> developer = new LinkedList<DeveloperConsole>();
@@ -58,6 +60,10 @@ public class GameObjects {
 	// add event for execute
 	public void addEvent(EventFunction item) {
 		events.add(item);
+	}
+
+	public void addScene(Scene item) {
+		scenes.add(item);
 	}
 
 	// add physics for calculate
