@@ -80,6 +80,21 @@ public class GameObjects {
 	public LinkedList<Physics> getPhysics() {
 		return physics;
 	}
+	
+	// get all physics
+	public LinkedList<Scene> getScenes() {
+		return scenes;
+	}
+
+	// search 'name' named scene
+	public Scene findScene(String name) {
+		for (int i = 0; i < scenes.size(); i++) {
+			if (scenes.get(i).getName().equals(name)) {
+				return scenes.get(i);
+			}
+		}
+		return null;
+	}
 
 	// ++++++++++ Camera ++++++++++\\
 	// get/set main camera
