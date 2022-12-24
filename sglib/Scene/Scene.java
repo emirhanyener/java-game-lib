@@ -3,10 +3,21 @@ package sglib.Scene;
 import sglib.GameObjects;
 
 public abstract class Scene {
-    public Scene(){
+    private String name;
+    public Scene(String name){
+        this.name = name;
         GameObjects.getInstance().addScene(this);
-        this.setup();
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     
     public abstract void setup();
+
+    public static void loadScene(String name){
+        //load scene
+    }
 }
