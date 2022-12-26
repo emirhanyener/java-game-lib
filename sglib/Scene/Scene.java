@@ -4,8 +4,8 @@ import sglib.GameObjects;
 
 public abstract class Scene {
     private String name;
-    public Scene(String name){
-        this.name = name;
+    public Scene(){
+        this.name = this.getClass().getSimpleName();
         GameObjects.getInstance().addScene(this);
     }
     public String getName() {
@@ -18,6 +18,6 @@ public abstract class Scene {
     public abstract void setup();
 
     public static void loadScene(String name){
-        //load scene
+        GameObjects.getInstance().findScene(name).setup();
     }
 }
