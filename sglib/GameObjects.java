@@ -146,6 +146,13 @@ public class GameObjects {
 		return gui;
 	}
 
+	public void resetAll(){
+		objects.clear();
+		physics.clear();
+		events.clear();
+		gui.clear();
+	}
+
 	// create new object
 	public void resetInstance() {
 		instance = new GameObjects();
