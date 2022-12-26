@@ -1,6 +1,5 @@
 package sglib.Developer;
 
-import java.awt.FlowLayout;
 import javax.swing.*;
 
 import sglib.GameObjects;
