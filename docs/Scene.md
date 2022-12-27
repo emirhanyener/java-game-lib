@@ -19,3 +19,24 @@ public class MainScene extends Scene{
     }
 }
 ```
+
+### Game
+```java
+import sglib.*;
+import sglib.Scene.*;
+
+public class Game {
+    public Game() {
+
+    }
+
+    public static void main(String[] args) {
+        Scene1 scene1 = new Scene1();
+
+        Scene.loadScene("Scene1"); //setup scene
+
+        SGLib sglib = new SGLib();
+        sglib.start();
+    }
+}
+```
