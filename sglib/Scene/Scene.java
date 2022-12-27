@@ -18,6 +18,7 @@ public abstract class Scene {
     public abstract void setup();
 
     public static void loadScene(String name){
+        GameObjects.getInstance().resetAll();
         GameObjects.getInstance().findScene(name).setup();
     }
 }
