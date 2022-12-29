@@ -8,7 +8,7 @@ import sglib.Util.Size;
 
 public class CameraTest {
     public CameraTest(){
-        int all = 5;
+        int all = 7;
         int success = 0;
 
         System.out.println("Camera tests start");
@@ -17,6 +17,8 @@ public class CameraTest {
         if(followerCameraPositionTest()) success++;
         if(followerCameraVariableObjectPositionTest()) success++;
         if(MultipleCameraPositionTest()) success++;
+        if(cameraSetZoomValue()) success++;
+        if(cameraAddZoomValue()) success++;
         System.out.println("Camera tests end");
 
         System.out.println("Camera tests " + success + " / " + all);
@@ -72,6 +74,24 @@ public class CameraTest {
             return true;
         }
         System.out.println("MultipleCameraPositionTest failed");
+        return false;
+    }
+    public boolean cameraSetZoomValue(){
+        StaticCamera c = new StaticCamera();
+        c.setZoomValue(10);
+        if(c.getZoomValue() == 10){
+            return true;
+        }
+        System.out.println("cameraSetZoomValue failed");
+        return false;
+    }    
+    public boolean cameraAddZoomValue(){
+        StaticCamera c = new StaticCamera();
+        c.addZoomValue(1);
+        if(c.getZoomValue() == 2){
+            return true;
+        }
+        System.out.println("cameraAddZoomValue failed");
         return false;
     }
 }
