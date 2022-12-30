@@ -22,6 +22,7 @@ public class GameObject {
 		this.position = position;
 		this.size = size;
 		this.image = image;
+		GameObjects.getInstance().addObject(this);
 	}
 
 	public GameObject(String name, Position position, Size size) {
@@ -29,6 +30,7 @@ public class GameObject {
 		this.position = position;
 		this.size = size;
 		this.image = null;
+		GameObjects.getInstance().addObject(this);
 	}
 
 	public GameObject(String name) {
@@ -37,6 +39,7 @@ public class GameObject {
 		this.position = new Position(0, 0);
 		this.size = new Size(0, 0);
 		this.image = null;
+		GameObjects.getInstance().addObject(this);
 	}
 
 	// getters
