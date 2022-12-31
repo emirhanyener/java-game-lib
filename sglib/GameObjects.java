@@ -18,6 +18,7 @@ public class GameObjects {
 	private LinkedList<Physics> physics = new LinkedList<Physics>();
 	private LinkedList<Scene> scenes = new LinkedList<Scene>();
 	private LinkedList<EventFunction> events = new LinkedList<EventFunction>();
+	private LinkedList<EventFunction> globalEvents = new LinkedList<EventFunction>();
 	private LinkedList<GUI> gui = new LinkedList<GUI>();
 	private LinkedList<DeveloperConsole> developer = new LinkedList<DeveloperConsole>();
 
@@ -61,6 +62,9 @@ public class GameObjects {
 	public void addEvent(EventFunction item) {
 		events.add(item);
 	}
+	public void addGlobalEvent(EventFunction item) {
+		globalEvents.add(item);
+	}
 
 	public void addScene(Scene item) {
 		scenes.add(item);
@@ -74,6 +78,9 @@ public class GameObjects {
 	// get all events
 	public LinkedList<EventFunction> getEvents() {
 		return events;
+	}
+	public LinkedList<EventFunction> getGlobalEvents() {
+		return globalEvents;
 	}
 
 	// get all physics
@@ -147,9 +154,9 @@ public class GameObjects {
 	}
 
 	public void resetAll(){
-		objects.clear();
-		physics.clear();
 		events.clear();
+		physics.clear();
+		objects.clear();
 		gui.clear();
 	}
 
