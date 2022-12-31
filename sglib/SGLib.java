@@ -41,6 +41,9 @@ public class SGLib {
 			}
 
 			// Function execute
+			for (EventFunction item : GameObjects.getInstance().getGlobalEvents()) {
+				item.execute();
+			}
 			for (EventFunction item : GameObjects.getInstance().getEvents()) {
 				item.execute();
 			}
