@@ -9,7 +9,6 @@ import sglib.Util.StaticValues.AlertLevel;
 public class SceneLoadEvent extends EventFunction {
     @Override
     public void execute() {
-        Alert.getInstance().addAlert("scene",AlertLevel.info);
         if (KeyManager.getManager().isKey1()) {
             Alert.getInstance().addAlert("scene1",AlertLevel.info);
             Scene.loadScene("Scene1");
