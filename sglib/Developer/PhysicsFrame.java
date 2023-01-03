@@ -1,28 +1,31 @@
 package sglib.Developer;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 import sglib.GameObjects;
+import sglib.Util.Physics;
 
 public class PhysicsFrame extends JFrame implements DeveloperConsole{
     JTable table = new JTable();
-    String[][] rows;
+    DefaultTableModel model;
 
     //Added physics info panel
     public PhysicsFrame(){
         this.setTitle("Physics Console");
         this.setBounds(10, 220, 520, 220);
         this.setLayout(null);
+
         
-        rows = new String[GameObjects.getInstance().getPhysics().size()][4];
-        for(int i = 0; i < GameObjects.getInstance().getPhysics().size(); i++){
-            rows[i][0] = GameObjects.getInstance().getPhysics().get(i).getObject().getName();
-            rows[i][1] = String.valueOf(GameObjects.getInstance().getPhysics().get(i).velocity.getX());
-            rows[i][2] = String.valueOf(GameObjects.getInstance().getPhysics().get(i).velocity.getY());
-            rows[i][3] = String.valueOf(GameObjects.getInstance().getPhysics().get(i).getMass());
+        model = (DefaultTableModel)table.getModel();
+        model.addColumn("Name");
+        model.addColumn("X Velocity");
+        model.addColumn("Y Velocity");
+        model.addColumn("Mass");
+        for (Physics item : GameObjects.getInstance().getPhysics()) {
+            model.addRow(new String[]{item.getObject().getName(), String.valueOf(item.velocity.getX()), String.valueOf(item.velocity.getY()), String.valueOf(item.getMass())});
         }
-        
-        table = new JTable(rows, new String[]{"Name", "X Velocity", "Y Velocity", "Mass"});
+        table.setModel(model);
         JScrollPane sp = new JScrollPane(table);
         sp.setBounds(0,0,520,185);
 
@@ -32,12 +35,12 @@ public class PhysicsFrame extends JFrame implements DeveloperConsole{
     //update printed physics values
     @Override
     public void update() {
-        for(int i = 0; i < GameObjects.getInstance().getPhysics().size(); i++){
-            table.setValueAt(GameObjects.getInstance().getPhysics().get(i).getObject().getName(), i, 0);
-            table.setValueAt(String.valueOf(GameObjects.getInstance().getPhysics().get(i).velocity.getX()), i, 1);
-            table.setValueAt(String.valueOf(GameObjects.getInstance().getPhysics().get(i).velocity.getY()), i, 2);
-            table.setValueAt(String.valueOf(GameObjects.getInstance().getPhysics().get(i).getMass()), i, 3);
-            table.putClientProperty(rootPane, accessibleContext);
+        int counter = model.getRowCount();
+        for (int i = 0; i < counter; i++) {
+            model.removeRow(0);
+        }
+        for (Physics item : GameObjects.getInstance().getPhysics()) {
+            model.addRow(new String[]{item.getObject().getName(), String.valueOf(item.velocity.getX()), String.valueOf(item.velocity.getY()), String.valueOf(item.getMass())});
         }
     }
 }
