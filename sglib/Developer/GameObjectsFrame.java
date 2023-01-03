@@ -8,7 +8,6 @@ import sglib.Util.GameObject;
 
 public class GameObjectsFrame extends JFrame implements DeveloperConsole{
     JTable table = new JTable();
-    String[][] rows;
     DefaultTableModel model;
 
     //Added gameobjects info panel
@@ -18,8 +17,10 @@ public class GameObjectsFrame extends JFrame implements DeveloperConsole{
         this.setLayout(null);
         model = (DefaultTableModel)table.getModel();
         model.addColumn("Name");
+        model.addColumn("X Position");
+        model.addColumn("Y Position");
         for (GameObject item : GameObjects.getInstance().getObjects()) {
-            model.addRow(new String[]{item.getName()});
+            model.addRow(new String[]{item.getName(), String.valueOf(item.position.getX()), String.valueOf(item.position.getY())});
         }
         table.setModel(model);
 
@@ -37,7 +38,7 @@ public class GameObjectsFrame extends JFrame implements DeveloperConsole{
             model.removeRow(0);
         }
         for (GameObject item : GameObjects.getInstance().getObjects()) {
-            model.addRow(new String[]{item.getName()});
+            model.addRow(new String[]{item.getName(), String.valueOf(item.position.getX()), String.valueOf(item.position.getY())});
         }
     }
 }
