@@ -78,13 +78,11 @@ public class GameObject {
 	// (short usage)
 	public static GameObject create(String name, Position position, Size size) {
 		GameObject object = new GameObject(name, position, size);
-		GameObject.add(object);
 		return object;
 	}
 
 	public static GameObject create(String name) {
 		GameObject object = new GameObject(name);
-		GameObject.add(object);
 		return object;
 	}
 
