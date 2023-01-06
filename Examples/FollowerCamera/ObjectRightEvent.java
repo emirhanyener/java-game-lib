@@ -5,6 +5,6 @@ import sglib.Util.*;
 public class ObjectRightEvent extends EventFunction {
     @Override
     public void execute() {
-        this.getObject().getPhysics().velocity.setX(1);
+        this.getObject().position.addX(1);
     }
 }
