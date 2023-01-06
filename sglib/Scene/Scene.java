@@ -8,6 +8,10 @@ public abstract class Scene {
         this.name = this.getClass().getSimpleName();
         GameObjects.getInstance().addScene(this);
     }
+    public Scene(String name){
+        this.name = name;
+        GameObjects.getInstance().addScene(this);
+    }
     public String getName() {
         return name;
     }
