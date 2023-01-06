@@ -17,5 +17,13 @@ public class SceneLoadEvent extends EventFunction {
             Alert.getInstance().addAlert("scene2",AlertLevel.info);
             Scene.loadScene("Scene2");
         }
+        if (KeyManager.getManager().isKey3()) {
+            Alert.getInstance().addAlert("scene3",AlertLevel.info);
+            Scene.loadScene("Scene3");
+        }
+        if (KeyManager.getManager().isKey4()) {
+            Alert.getInstance().addAlert("scene4",AlertLevel.info);
+            Scene.loadScene("Scene4");
+        }
     }
 }
