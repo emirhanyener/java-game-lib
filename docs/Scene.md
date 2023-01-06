@@ -31,9 +31,20 @@ public class Game {
     }
 
     public static void main(String[] args) {
+        //first usage
         Scene1 scene1 = new Scene1();
 
-        Scene.loadScene("Scene1"); //setup scene
+        //second usage
+        new Scene("Scene2") {
+            @Override
+            public void setup() {
+                .
+                .
+                .
+            }
+        };
+
+        Scene.loadScene("Scene1"); //load scene
 
         SGLib sglib = new SGLib();
         sglib.start();
