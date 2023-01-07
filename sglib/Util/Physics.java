@@ -113,7 +113,7 @@ public class Physics {
         if (detectedObjectsLeft.size() != 0) {
             // move if object movable
             if(Physics.find(detectedObjectsLeft.get(0)) == null){
-                object.position.setX(detectedObjectsLeft.get(0).position.getX() - detectedObjectsLeft.get(0).size.getWidth() / 2 - object.size.getWidth() / 2);
+                object.position.setX(detectedObjectsLeft.get(0).position.getX() + detectedObjectsLeft.get(0).size.getWidth() / 2 + object.size.getWidth() / 2);
                 object.getPhysics().velocity.setX(0);
             } else {
                 float m1 = this.mass;
