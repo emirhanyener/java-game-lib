@@ -7,7 +7,8 @@ public class JumpEvent extends EventFunction {
     @Override
     public void execute() {
         if (KeyManager.getManager().isKeySpace()) {
-            GameObject.find("player").getPhysics().velocity.setY(-10);
+            if(GameObject.find("player").getPhysics().isGround())
+                GameObject.find("player").getPhysics().velocity.setY(-10);
         }
     }
 }

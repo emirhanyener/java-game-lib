@@ -13,7 +13,8 @@ public class PlayerFunction extends EventFunction {
         Alert.getInstance().setAlertRow(1, "Player velocity: " + GameObject.find("player").getPhysics().velocity.getX() + ", " + GameObject.find("player").getPhysics().velocity.getY(), AlertLevel.info);
 
         if (KeyManager.getManager().isKeySpace()) {
-            GameObject.find("player").getPhysics().velocity.setY(-10);
+            if(GameObject.find("player").getPhysics().isGround())
+                GameObject.find("player").getPhysics().velocity.setY(-10);
         }
         if (KeyManager.getManager().isKeyLeft()) {
             GameObject.find("player").getPhysics().velocity.setX(-5);
