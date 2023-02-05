@@ -77,6 +77,7 @@ public class CameraTest {
         return false;
     }
     public boolean cameraSetZoomValue(){
+        GameObjects.getInstance().resetInstance();
         StaticCamera c = new StaticCamera();
         c.setZoomValue(10);
         if(c.getZoomValue() == 10){
@@ -86,6 +87,7 @@ public class CameraTest {
         return false;
     }    
     public boolean cameraAddZoomValue(){
+        GameObjects.getInstance().resetInstance();
         StaticCamera c = new StaticCamera();
         c.addZoomValue(1);
         if(c.getZoomValue() == 2){
